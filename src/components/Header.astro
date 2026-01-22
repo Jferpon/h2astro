@@ -1,0 +1,55 @@
+---
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header>
+  <nav>
+    <a href="/" class="logo" aria-label="Achedosol">
+      <img src="/logo.webp" alt="Achedosol" />
+    </a>
+
+    <div class="internal-links">
+      <HeaderLink href="/">Productos</HeaderLink>
+      <HeaderLink href="/blog">Mi Achedosol</HeaderLink>
+      <HeaderLink href="/about">Tienda Online</HeaderLink>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    margin: 0;
+    padding: 0 1em;
+    background: rgb(53, 117, 255);
+    box-shadow: 0 2px 8px rgba(var(--black), 5%);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    padding: 0.5em 0;
+  }
+
+  .logo img {
+    height: 150px; /* ajusta según tu logo */
+    width: auto;
+    display: block;
+  }
+
+  nav a {
+    padding: 1em 0.5em;
+    color: white;
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+  }
+
+  nav a.active {
+    border-bottom-color: var(--accent);
+  }
+</style>
