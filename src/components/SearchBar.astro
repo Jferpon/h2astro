@@ -1,0 +1,53 @@
+<form class="search-bar" role="search">
+  <div class="search-wrapper">
+    <input
+      type="search"
+      placeholder="Buscar"
+      aria-label="Buscar"
+    />
+
+    <svg
+      class="search-icon"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        d="M21 20l-5.2-5.2a7 7 0 10-1.4 1.4L20 21zM10 16a6 6 0 110-12 6 6 0 010 12z"
+      />
+    </svg>
+  </div>
+</form>
+
+<style>
+.search-bar {
+  display: block;
+  width: 100%;
+  padding: 0.75em 1em;
+  background: rgb(53, 117, 255);
+}
+
+.search-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+input {
+  width: 100%;
+  padding: 0.75em 3em 0.75em 1em;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+}
+
+.search-icon {
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  pointer-events: none;
+}
+</style>
