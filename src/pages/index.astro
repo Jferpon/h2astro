@@ -2,8 +2,10 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import LatestPosts from '../components/LatestPosts.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
+
 
 <!doctype html>
 <html lang="en">
@@ -30,10 +32,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 		</p>
 		<h2>Ultimas noticias</h2>
-		<p>
-			Pásate por nuestro blog y mantente siempre actualizado con las
-			 últimas noticias del sector, además de muchos interesantes artículos y consejos.
-		</p>
+<p>
+	Pásate por nuestro blog y mantente siempre actualizado con las
+	últimas noticias del sector, además de muchos interesantes artículos y consejos.
+</p>
+<LatestPosts />
 		</main>
 		<Footer />
 	</body>
