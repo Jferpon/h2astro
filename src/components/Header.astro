@@ -42,74 +42,141 @@ import HeaderLink from './HeaderLink.astro';
 </header>
 
 <style>
-  header {
-    padding: 0 1rem;
-    background: rgb(53, 117, 255);
-    box-shadow: 0 2px 8px rgba(var(--black), 5%);
-  }
+/* ===========================
+   HEADER GENERAL
+=========================== */
+header {
+  padding: 0 1rem;
+  background: rgb(53, 117, 255);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
 
-  /* GRID LAYOUT */
+/* ===========================
+   NAV PRINCIPAL
+=========================== */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* permite segunda fila */
+  row-gap: 0.5rem; /* espacio entre filas */
+}
+
+/* ===========================
+   LOGO
+=========================== */
+.logo img {
+  height: auto;
+  max-height: 180px;
+  width: auto;
+  display: block;
+}
+
+/* ===========================
+   BUSCADOR
+=========================== */
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 0.5rem; /* espacio en la segunda fila */
+}
+
+.search-bar input {
+  width: 100%;
+  height: 36px;
+  padding-left: 2rem;
+  padding-right: 0.8rem;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  background: white;
+  font-size: 0.9rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #777;
+  pointer-events: none;
+}
+
+/* ===========================
+   ENLACES INTERNOS
+=========================== */
+.internal-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.internal-links a {
+  padding: 0.5em 0.75em;
+  color: white;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+.internal-links a.active {
+  border-bottom-color: var(--accent);
+}
+
+/* ===========================
+   MEDIA QUERIES
+=========================== */
+
+/* TABLET */
+@media (max-width: 1024px) {
   .nav {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    column-gap: 1rem; /* menos espacio entre logo y buscador */
+    justify-content: space-between;
+    flex-wrap: wrap;  /* permite segunda fila */
+    row-gap: 0.5rem;
   }
 
-  /* LOGO */
   .logo img {
-    height: 180px; /* logo más grande */
-    width: auto;
-    display: block;
+    max-height: 120px;
   }
 
-  /* BUSCADOR */
   .search-bar {
-    position: relative;
-    width: 100%;
-    max-width: 300px; /* menos ancho para que no empuje */
-    justify-self: center;
+    flex-basis: 100%; /* ocupa toda la segunda fila */
+    max-width: 100%;
+    order: 2;          /* mover a segunda fila */
+    margin-top: 0.5rem;
   }
 
-  .search-bar input {
-    width: 100%;
-    height: 36px;             /* un poco más pequeño */
-    padding-left: 2rem;       /* espacio suficiente para la lupa */
-    padding-right: 0.8rem;    /* sin exagerar el padding derecho */
-    border-radius: 999px;
-    border: none;
-    outline: none;
-    background: white;
-    font-size: 0.9rem;
-  }
-
-  .search-icon {
-    position: absolute;
-    left: 0.5rem;       /* más cerca del borde */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    color: #777;
-    pointer-events: none;
-  }
-
-  /* ENLACES */
   .internal-links {
-    display: flex;
-    align-items: center;
-    justify-self: end;   /* pegar a la derecha */
+    order: 1; /* enlaces al lado del logo */
+  }
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  .nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+  }
+
+  .logo img {
+    max-height: 80px;
+  }
+
+  .internal-links {
+    order: 1;           /* primera fila: logo + enlaces */
     gap: 0.5rem;
   }
 
-  .internal-links a {
-    padding: 0.5em 0.75em;
-    color: white;
-    text-decoration: none;
-    border-bottom: 4px solid transparent;
+  .search-bar {
+    order: 2;           /* segunda fila: buscador */
+    width: 90%;
+    max-width: none;
+    margin-top: 0.5rem;
   }
+}
 
-  .internal-links a.active {
-    border-bottom-color: var(--accent);
-  }
+
 </style>
