@@ -169,3 +169,6 @@ hr { border: none; border-top: 1px solid rgb(var(--gray-light)); }
 /* ----------------- ESCALADO FLUIDO ----------------- */
 .header-logo { max-height: clamp(40px, 8vw, 60px); }
 .header-search input { font-size: clamp(14px, 2vw, 16px); }
+picture {
+	display: block;
+}

@@ -1,85 +1,184 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import FormattedDate from './FormattedDate.astro';
 
 const posts = (await getCollection('blog'))
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 3);
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
 ---
 
 <style>
-	.latest-posts {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr); /* Siempre 3 en línea */
-		gap: 2rem;
-		list-style: none;
-		padding: 0;
-		margin: 2rem 0;
-	}
+  .latest-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+  }
 
-	.latest-posts li {
-		display: flex;
-		flex-direction: column;
-		height: 100%; /* Para que el li ocupe toda la altura posible */
-	}
+  .latest-posts li {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 
-	.latest-posts a {
-		display: flex;
-		flex-direction: column;
-		flex: 1; /* Hace que el contenido ocupe todo el li */
-		text-decoration: none;
-	}
+  .latest-posts a {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-decoration: none;
+  }
 
-	.latest-posts img {
-		width: 100%;
-		height: 200px;
-		object-fit: cover;
-		border-radius: 12px;
-		margin-bottom: 0.75rem;
-	}
+  /* --- Imagen estable (CLAVE) --- */
+  .image-wrapper {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+  }
 
-	.title {
-		margin: 0;
-		color: rgb(var(--black));
-		font-size: 1.1rem;
-		font-weight: 600;
-	}
+  .image-wrapper picture,
+  .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-	.date {
-		margin-top: 0.25rem;
-		color: rgb(var(--gray));
-		font-size: 0.85rem;
-	}
+  /* --- Badge fecha --- */
+  .date-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    background: #fff;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+  }
 
-	.description {
-		margin-top: 0.5rem;
-		color: #555; 
-		font-size: 1rem; 
-		line-height: 1.3;
-		flex-grow: 1; 
-	}
+  .date-day {
+    color: black;
+    font-size: 0.95rem;
+  }
 
-	.latest-posts a:hover .title {
-		color: rgb(var(--accent));
-	}
+  .date-month {
+    color: black;
+    font-size: 0.65rem;
+    margin-top: 2px;
+    letter-spacing: 0.08em;
+  }
+
+  /* --- Badge categoría: franja inferior azul claro --- */
+  .category-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%; /* franja inferior */
+    background-color: #cce4ff; /* azul claro sólido */
+    color: #003366; /* azul oscuro para el texto */
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 0 0 12px 12px;
+    z-index: 1; /* detrás de la fecha */
+  }
+
+  /* --- Texto --- */
+  .title {
+    margin: 0.5rem 0 0 0;
+    color: rgb(var(--black));
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .description {
+    margin-top: 0.5rem;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.3;
+    flex-grow: 1;
+  }
+
+  .latest-posts a:hover .title {
+    color: rgb(var(--accent));
+  }
+
+  @media (max-width: 640px) {
+    .date-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      top: 8px;
+      left: 8px;
+    }
+
+    .date-day {
+      font-size: 0.75rem;
+    }
+
+    .date-month {
+      font-size: 0.55rem;
+      margin-top: 1px;
+    }
+
+    .category-badge {
+      font-size: 0.75rem;
+      height: 20%;
+    }
+  }
 </style>
 
 <ul class="latest-posts">
-	{posts.map((post) => (
-		<li>
-			<a href={`/blog/${post.id}/`}>
-				{post.data.heroImage && (
-					<Image src={post.data.heroImage} alt={post.data.title} />
-				)}
-				<h4 class="title">{post.data.title}</h4>
-				<p class="date">
-					<FormattedDate date={post.data.pubDate} />
-				</p>
-				{post.data.description && (
-					<p class="description">{post.data.description}</p>
-				)}
-			</a>
-		</li>
-	))}
+  {posts.map((post) => {
+    const day = post.data.pubDate.toLocaleDateString('es-ES', {
+      day: '2-digit',
+    });
+    const month = post.data.pubDate.toLocaleDateString('es-ES', {
+      month: 'short',
+    });
+
+    return (
+      <li>
+        <a href={`/blog/${post.id}/`}>
+          {post.data.heroImage && (
+            <div class="image-wrapper">
+              <Image
+                src={post.data.heroImage}
+                alt={post.data.title}
+              />
+              {/* Fecha */}
+              <span class="date-badge">
+                <span class="date-day">{day}</span>
+                <span class="date-month">{month}</span>
+              </span>
+              {/* Categoría abajo */}
+              {post.data.category && (
+                <span class="category-badge">{post.data.category}</span>
+              )}
+            </div>
+          )}
+
+          <h4 class="title">{post.data.title}</h4>
+
+          {post.data.description && (
+            <p class="description">{post.data.description}</p>
+          )}
+        </a>
+      </li>
+    );
+  })}
 </ul>
