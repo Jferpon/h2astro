@@ -6,49 +6,85 @@ import LatestPosts from '../components/LatestPosts.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 ---
 
-
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+
+		<style>
+			/* === PROVEEDORES === */
+			.proveedores {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 20px;
+				align-items: center;
+				justify-items: center;
+				margin: 40px 0;
+			}
+
+			.proveedores img {
+				max-width: 100%;
+				height: auto;
+				object-fit: contain;
+			}
+
+			/* === VERSIÓN MÓVIL === */
+			@media (max-width: 768px) {
+				.proveedores {
+					gap: 10px;
+				}
+
+				.proveedores img {
+					width: 70px;   /* aquí controlas el tamaño en móvil */
+				}
+			}
+		</style>
 	</head>
+
 	<body>
 		<Header />
+
 		<main>
 			<h1>Tiendas achedosol</h1>
+
 			<p>
-				Este es un modelo de como pretendo plantear la pagina de Achedosol 
+				Este es un modelo de como pretendo plantear la pagina de Achedosol
 			</p>
+
 			<p>
-				Aqui pondria los proveedores  pero no se si es obligatorio poner los videos o la imagen de 7 a 7 porque
+				Aqui pondria los proveedores pero no se si es obligatorio poner los videos o la imagen de 7 a 7 porque
 				ocupan mucho espacio al principio cuando deberia ser mas bien al final de la pagina, ademas el video deberia ser
 				algo mas secundario a la hora de dar informacion sobre las tiendas, ya que lo importante es la informacion escrita.
 				Por lo tanto creo que seria mejor poner los videos al final de la pagina.
 			</p>
-			
-			<h2>Proveedores</h2>
-			<img src="public/clever.png" alt="clever" width="200" height="100"/>
-			<img src="public/daikin.svg" alt="daikin" width="100" height="100"/>
-			<img src="public/ASP.webp" alt="ASP" width="200" height="100"/>
-			<img src="public/ariston.svg" alt="ariston" width="200" height="100"/>
-			<img src="public/Grohe.svg.png" alt="Grohe" width="100" height="100"/>
-			<img src="public/bombas_ideal.jfif" alt="bombas_ideal" width="200" height="100"/>
-			<img src="public/zodiac.png" alt="zodiac" width="200" height="100"/>
-			<img src="public/tecnoagua.jfif" alt="tecnoagua" width="200" height="50"/>
-			<img src="public/sth.jfif" alt="sth" width="150" height="100"/>
-			<img src="public/roth.png" alt="roth" width="200" height="100"/>
-			<img src="public/hunter.png" alt="hunter" width="200" height="100"/>
-			<img  src="public/jimten.png" alt="jimten" width="100" height="100"/>
-		<p>
 
-		</p>
-		<h2>Ultimas noticias</h2>
-<p>
-	Pásate por nuestro blog y mantente siempre actualizado con las
-	últimas noticias del sector, además de muchos interesantes artículos y consejos.
-</p>
-<LatestPosts />
+			<h2>Proveedores</h2>
+
+			<div class="proveedores">
+				<img src="public/clever.png" alt="clever" />
+				<img src="public/daikin.svg" alt="daikin" />
+				<img src="public/ASP.webp" alt="ASP" />
+				<img src="public/ariston.svg" alt="ariston" />
+				<img src="public/Grohe.svg.png" alt="Grohe" />
+				<img src="public/bombas_ideal.jfif" alt="bombas_ideal" />
+				<img src="public/zodiac.png" alt="zodiac" />
+				<img src="public/tecnoagua.jfif" alt="tecnoagua" />
+				<img src="public/sth.jfif" alt="sth" />
+				<img src="public/roth.png" alt="roth" />
+				<img src="public/hunter.png" alt="hunter" />
+				<img src="public/jimten.png" alt="jimten" />
+			</div>
+
+			<h2>Ultimas noticias</h2>
+
+			<p>
+				Pásate por nuestro blog y mantente siempre actualizado con las
+				últimas noticias del sector, además de muchos interesantes artículos y consejos.
+			</p>
+
+			<LatestPosts />
 		</main>
+
 		<Footer />
 	</body>
 </html>

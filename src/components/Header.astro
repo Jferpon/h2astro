@@ -78,7 +78,7 @@ header {
 .search-bar {
   position: relative;
   width: 100%;
-  max-width: 300px;
+  max-width: 500px;
   margin-top: 0.5rem; /* espacio en la segunda fila */
 }
 
@@ -133,46 +133,66 @@ header {
 @media (max-width: 1024px) {
   .nav {
     justify-content: space-between;
-    flex-wrap: wrap;  /* permite segunda fila */
+    align-items: center;
+    flex-wrap: wrap;
     row-gap: 0.5rem;
+  }
+
+  /* LOGO a la izquierda */
+  .logo {
+    margin-right: auto;
+  }
+
+  /* ENLACES a la derecha */
+  .internal-links {
+    margin-left: auto;
   }
 
   .logo img {
     max-height: 120px;
   }
 
+  /* BUSCADOR en segunda fila */
   .search-bar {
-    flex-basis: 100%; /* ocupa toda la segunda fila */
+    flex-basis: 100%;
     max-width: 100%;
-    order: 2;          /* mover a segunda fila */
+    order: 2;
     margin-top: 0.5rem;
   }
-
-  .internal-links {
-    order: 1; /* enlaces al lado del logo */
-  }
 }
+
 
 /* MÓVIL */
 @media (max-width: 768px) {
   .nav {
     justify-content: center;
     flex-wrap: wrap;
-    row-gap: 0.5rem;
+    row-gap: 0.75rem;
+  }
+
+  /* LOGO arriba centrado */
+  .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .logo img {
     max-height: 80px;
   }
 
+  /* NAV centrado */
   .internal-links {
-    order: 1;           /* primera fila: logo + enlaces */
-    gap: 0.5rem;
+    order: 1;
+    width: 100%;
+    justify-content: center;
+    gap: 0.75rem;
   }
 
+  /* BUSCADOR abajo */
   .search-bar {
-    order: 2;           /* segunda fila: buscador */
-    width: 90%;
+    order: 2;
+    width: 95%;
     max-width: none;
     margin-top: 0.5rem;
   }
