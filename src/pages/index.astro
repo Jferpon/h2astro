@@ -1,87 +1,484 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import LatestPosts from '../components/LatestPosts.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import LatestPosts from "../components/LatestPosts.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+<html lang="es">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 
-		<style>
-			/* === PROVEEDORES === */
-			.proveedores {
-				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				gap: 20px;
-				align-items: center;
-				justify-items: center;
-				margin: 40px 0;
-			}
+    <style>
+      /* ===== LAYOUT GENERAL ===== */
+      main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
 
-			.proveedores img {
-				max-width: 100%;
-				height: auto;
-				object-fit: contain;
-			}
+      /* ===== HORARIOS + TIENDAS ===== */
+      .tiendas-layout {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 40px;
+        margin-top: 40px;
+      }
 
-			/* === VERSIÓN MÓVIL === */
-			@media (max-width: 768px) {
-				.proveedores {
-					gap: 10px;
-				}
+      .horarios {
+        position: sticky;
+        top: 100px;
+        text-align: center;
+        background: #f5f7fa;
+        padding: 20px;
+        border-radius: 12px;
+      }
 
-				.proveedores img {
-					width: 70px;   /* aquí controlas el tamaño en móvil */
-				}
-			}
-		</style>
-	</head>
+      .horarios ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0;
+      }
 
-	<body>
-		<Header />
+      .horarios li {
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+      }
 
-		<main>
-			<h1>Tiendas achedosol</h1>
+      /* ===== TIENDA ===== */
+      .tienda {
+        margin-bottom: 60px;
+      }
 
-			<p>
-				¿Imagenes tiendas + horarios y contactos?
-			</p>
+      .tienda img {
+        width: 65%;
+        max-width: 500px;
+        border-radius: 12px;
+        margin-bottom: 15px;
+      }
 
-			
-			<p>
-			</p>
+      /* ===== DATOS DE CONTACTO ===== */
+      .datos-contacto {
+        margin-top: 20px;
+      }
 
-			<h2>Proveedores</h2>
+      .dato-contacto {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
 
-			<div class="proveedores">
-				<img src="/clever.png" alt="clever" />
-				<img src="/daikin.svg" alt="daikin" />
-				<img src="/ASP.webp" alt="ASP" />
-				<img src="/ariston.svg" alt="ariston" />
-				<img src="/Grohe.svg.png" alt="Grohe" />
-				<img src="/bombas_ideal.jfif" alt="bombas_ideal" />
-				<img src="/zodiac.png" alt="zodiac" />
-				<img src="/tecnoagua.jfif" alt="tecnoagua" />
-				<img src="/sth.jfif" alt="sth" />
-				<img src="/roth.png" alt="roth" />
-				<img src="/hunter.png" alt="hunter" />
-				<img src="/jimten.png" alt="jimten"   />
-			</div>
+      .icono {
+        width: 36px;
+        height: 36px;
+        background-color: rgb(53, 117, 255);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        flex-shrink: 0;
+      }
 
-			<h2>Ultimas noticias</h2>
+      .icono svg {
+        width: 20px;
+        height: 20px;
+      }
 
-			<p>
-				Pásate por nuestro blog y mantente siempre actualizado con las
-				últimas noticias del sector, además de muchos interesantes artículos y consejos.
-			</p>
+      .dato-texto {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0;
+      }
 
-			<LatestPosts />
-		</main>
+      .dato-texto a {
+        color: inherit;
+        text-decoration: none;
+      }
 
-		<Footer />
-	</body>
+      .dato-texto a:hover {
+        text-decoration: underline;
+      }
+
+      /* ===== PROVEEDORES ===== */
+      .proveedores {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        align-items: center;
+        justify-items: center;
+        margin: 40px 0;
+      }
+
+      .proveedores img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 768px) {
+        .tiendas-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .horarios {
+          position: relative;
+          top: auto;
+        }
+
+        .proveedores {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+
+    <main>
+      <h1>Tiendas Achedosol</h1>
+
+      <section class="tiendas-layout">
+        <!-- HORARIOS -->
+        <aside class="horarios">
+          <h3>Horarios</h3>
+          <ul>
+            <li><strong>Lunes a Viernes:</strong><br />7:00 – 19:00</li>
+            <li><strong>Sábados:</strong><br />9:00 – 13:00</li>
+            <li><strong>Domingos:</strong><br />Cerrado</li>
+          </ul>
+        </aside>
+
+        <!-- TIENDAS -->
+        <section class="tiendas">
+          <!-- Estepona -->
+          <article class="tienda">
+            <img src="/achedosolEstepona.webp" alt="Tiendas Achedosol Estepona" />
+            <h3>Estepona</h3>
+            <h4>Datos de contacto</h4>
+
+            <div class="datos-contacto">
+              <!-- Dirección -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 5.5 12 5.5s2.5 1.12 2.5 2.5S13.38 10.5 12 10.5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="https://maps.google.com/?q=C. Franklin, 15, 19, 29680 Estepona, Málaga" target="_blank">
+                    C. Franklin, 15, 19, 29680 Estepona, Málaga
+                  </a>
+                </p>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="tel:+34952804696">952 80 46 96 ext. 1</a>
+                </p>
+              </div>
+
+              <!-- Email -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6v12h16V6l-8 5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="mailto:proyectos@montestorres.es">
+                    proyectos@montestorres.es
+                  </a>
+                </p>
+              </div>
+
+              <!-- Responsable -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">Responsable: Juan Manuel Angulo</p>
+              </div>
+            </div>
+          </article>
+
+		   <!-- San Pedro -->
+          <article class="tienda">
+            <img src="/achedosolSanPedro.webp" alt="Tiendas Achedosol San Pedro" />
+            <h3>San Pedro</h3>
+            <h5>Datos de contacto</h5>
+
+            <div class="datos-contacto">
+              <!-- Dirección -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 5.5 12 5.5s2.5 1.12 2.5 2.5S13.38 10.5 12 10.5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="https://maps.google.com/?q=C. Franklin, 15, 19, 29680 Estepona, Málaga" target="_blank">
+                    C. Franklin, 15, 19, 29680 Estepona, Málaga
+                  </a>
+                </p>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="tel:+34952804696">952 80 46 96 ext. 1</a>
+                </p>
+              </div>
+
+              <!-- Email -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6v12h16V6l-8 5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="mailto:proyectos@montestorres.es">
+                    proyectos@montestorres.es
+                  </a>
+                </p>
+              </div>
+
+              <!-- Responsable -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">Responsable: Juan Manuel Angulo</p>
+              </div>
+            </div>
+          </article>
+
+		   <!-- Sabinillas -->
+          <article class="tienda">
+            <img src="/achedosolSabinillas.webp" alt="Tiendas Achedosol Sabinillas" />
+            <h3>Sabinillas</h3>
+            <h5>Datos de contacto</h5>
+
+            <div class="datos-contacto">
+              <!-- Dirección -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 5.5 12 5.5s2.5 1.12 2.5 2.5S13.38 10.5 12 10.5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="https://maps.google.com/?q=C. Franklin, 15, 19, 29680 Estepona, Málaga" target="_blank">
+                    C. Franklin, 15, 19, 29680 Estepona, Málaga
+                  </a>
+                </p>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="tel:+34952804696">952 80 46 96 ext. 1</a>
+                </p>
+              </div>
+
+              <!-- Email -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6v12h16V6l-8 5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="mailto:proyectos@montestorres.es">
+                    proyectos@montestorres.es
+                  </a>
+                </p>
+              </div>
+
+              <!-- Responsable -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">Responsable: Juan Manuel Angulo</p>
+              </div>
+            </div>
+          </article>
+
+		   <!-- Coin -->
+          <article class="tienda">
+            <img src="/achedosolCoin.webp" alt="Tiendas Achedosol Estepona" />
+            <h3>Coin</h3>
+            <h5>Datos de contacto</h5>
+
+            <div class="datos-contacto">
+              <!-- Dirección -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 5.5 12 5.5s2.5 1.12 2.5 2.5S13.38 10.5 12 10.5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="https://maps.google.com/?q=C. Franklin, 15, 19, 29680 Estepona, Málaga" target="_blank">
+                    C. Franklin, 15, 19, 29680 Estepona, Málaga
+                  </a>
+                </p>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="tel:+34952804696">952 80 46 96 ext. 1</a>
+                </p>
+              </div>
+
+              <!-- Email -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6v12h16V6l-8 5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="mailto:proyectos@montestorres.es">
+                    proyectos@montestorres.es
+                  </a>
+                </p>
+              </div>
+
+              <!-- Responsable -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">Responsable: Juan Manuel Angulo</p>
+              </div>
+            </div>
+          </article>
+
+		   <!-- Sotogrande -->
+          <article class="tienda">
+            <img src="/achedosolSotogrande.webp" alt="Tiendas Achedosol Sotogrande" />
+            <h3>Sotogrande</h3>
+            <h5>Datos de contacto</h5>
+
+            <div class="datos-contacto">
+              <!-- Dirección -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 5.5 12 5.5s2.5 1.12 2.5 2.5S13.38 10.5 12 10.5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="https://maps.google.com/?q=C. Franklin, 15, 19, 29680 Estepona, Málaga" target="_blank">
+                    C. Franklin, 15, 19, 29680 Estepona, Málaga
+                  </a>
+                </p>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="tel:+34952804696">952 80 46 96 ext. 1</a>
+                </p>
+              </div>
+
+              <!-- Email -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6v12h16V6l-8 5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">
+                  <a href="mailto:proyectos@montestorres.es">
+                    proyectos@montestorres.es
+                  </a>
+                </p>
+              </div>
+
+              <!-- Responsable -->
+              <div class="dato-contacto">
+                <span class="icono">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/>
+                  </svg>
+                </span>
+                <p class="dato-texto">Responsable: Juan Manuel Angulo</p>
+              </div>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <h2>Proveedores</h2>
+
+      <div class="proveedores">
+        <img src="/clever.png" alt="clever" />
+        <img src="/daikin.svg" alt="daikin" />
+        <img src="/ASP.webp" alt="ASP" />
+        <img src="/ariston.svg" alt="ariston" />
+        <img src="/Grohe.svg.png" alt="Grohe" />
+        <img src="/bombas_ideal.jfif" alt="bombas ideal" />
+        <img src="/zodiac.png" alt="zodiac" />
+        <img src="/tecnoagua.jfif" alt="tecnoagua" />
+        <img src="/sth.jfif" alt="sth" />
+        <img src="/roth.png" alt="roth" />
+        <img src="/hunter.png" alt="hunter" />
+        <img src="/jimten.png" alt="jimten" />
+      </div>
+
+      <h2>Últimas noticias</h2>
+      <p>
+        Pásate por nuestro blog y mantente siempre actualizado con las últimas
+        noticias del sector, además de muchos artículos y consejos.
+      </p>
+
+      <LatestPosts />
+    </main>
+
+    <Footer />
+  </body>
 </html>
