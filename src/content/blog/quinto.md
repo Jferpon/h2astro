@@ -1,8 +1,7 @@
 ---
-title: 'Cuarto  post'
+title: 'Quinto  post'
 description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 10 2025'
+pubDate: 'Dec 10 2025'
 heroImage: '../../assets/piscina.jpg'
 category: 'Noticias'
 ---
-Este es el cuarto post 
