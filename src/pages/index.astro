@@ -11,14 +11,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
   <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   <style>
   /* ===== LAYOUT GENERAL ===== */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 40px; /* más espacio a los lados */
-}
 
-h1, h2, h3, h4, h5 {
-  margin: 0 0 10px 0;
+
+h1, h2{
+  margin-top:2.3rem;
+  text-align: center;
 }
 
 /* ===== HORARIOS + TIENDAS ===== */
@@ -26,7 +23,7 @@ h1, h2, h3, h4, h5 {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 40px;
-  margin-top: 40px;
+  margin-left:-140px;
 }
 
 /* Columna de tiendas */
@@ -39,24 +36,46 @@ h1, h2, h3, h4, h5 {
 /* Horarios */
 .horarios {
   position: sticky;
+  border-collapse: collapse;
+ border-color: black;
+ border-style: solid ;
+ border-width: 2px;
   top: 100px;
   text-align: center;
-  background: #f5f7fa;
-  padding: 20px;
-  border-radius: 12px;
-  min-width: 220px;
+  background: rgb(53, 117, 255);
+  padding: 28px;              /* un poco más de aire */
+  border-radius: 16px;
+  overflow-y: auto;
+   max-height: 46vh; 
+  min-width: 260px;           /* más ancho para texto grande */
+}
+
+.horarios h3 {
+  color: white;
+  font-size: 1.6rem;          /* título grande */
+  margin-bottom: 16px;
 }
 
 .horarios ul {
+  color:white;
   list-style: none;
   padding: 0;
-  margin: 20px 0 0;
+  margin: 0;
 }
 
 .horarios li {
-  margin-bottom: 10px;
-  font-size: 0.95rem;
+  color:black;
+  font-weight: bold;
+  margin-bottom: 18px;
+  font-size: 1.25rem;        
+  line-height: 1.4;
 }
+.horarios li strong{
+  color:white;
+  font-size: 1.3rem;
+}
+
+
 
 /* ===== TIENDA ===== */
 .tienda-contenedor {
@@ -66,13 +85,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .tienda-contenedor img {
-  width: auto;          /* ancho automático según proporción */
-  max-width: 200px;     /* límite máximo para no desbordar */
-  height: auto;         /* altura automática */
-  border-radius: 12px;
+  border-radius: 25px;
   object-fit: contain;  /* no recortar la imagen */
   flex-shrink: 0;
-  margin-right: 20px;   /* espacio entre imagen y contacto */
 }
 
 /* ===== DATOS DE CONTACTO ===== */
@@ -140,7 +155,29 @@ h1, h2, h3, h4, h5 {
   height: auto;
   object-fit: contain;
 }
+ .imgEstepona {
+  max-width: 68vh;
+  height: 42vh;
+  
+}
+.imgSanPedro{
+  max-width: 65vh;
+  height: 45vh;
 
+}
+.imgSotogrande{
+  max-width: 60vh;
+  height: 40vh;
+}
+
+.imgSabinillas{
+  max-width: 50vh;
+  height: 40vh;
+}
+.imgCoin{
+  max-width: 50vh;
+  height: 35vh;
+}
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   main {
@@ -163,7 +200,9 @@ h1, h2, h3, h4, h5 {
 
   .proveedores {
     grid-template-columns: repeat(2, 1fr);
-  }
+ 
+ }
+
 }
 
   </style>
@@ -180,7 +219,7 @@ h1, h2, h3, h4, h5 {
         <!-- Estepona -->
         <article class="tienda">
           <div class="tienda-contenedor">
-            <img src="/achedosolEstepona.webp" alt="Tiendas Achedosol Estepona" />
+            <img src="/achedosolEstepona.webp" alt="Tiendas Achedosol Estepona" class="imgEstepona" />
             <aside class="datos-contacto">
               <h3>Estepona</h3>
               <div class="dato-contacto">
@@ -222,7 +261,7 @@ h1, h2, h3, h4, h5 {
         <!-- San Pedro -->
         <article class="tienda">
           <div class="tienda-contenedor">
-            <img src="/achedosolSanPedro.webp" alt="Tiendas Achedosol San Pedro" />
+            <img src="/achedosolSanPedro.webp" alt="Tiendas Achedosol San Pedro" class="imgSanPedro" />
             <aside class="datos-contacto">
               <h3>San Pedro</h3>
               <div class="dato-contacto">
@@ -231,7 +270,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 5.5 12 5.5s2.5 1.12 2.5 2.5S13.38 10.5 12 10.5z"/>
                   </svg>
                 </span>
-                <p class="dato-texto"><a href="https://maps.google.com/?q=Calle San Pedro, 12, 29670 San Pedro, Málaga" target="_blank">Calle San Pedro, 12, 29670 San Pedro, Málaga</a></p>
+                <p class="dato-texto"><a href="https://maps.google.com/?q=Calle San Pedro, 12, 29670 San Pedro, Málaga" target="_blank">C. Amistad, 29670 San Pedro Alcántara, Málaga</a></p>
               </div>
               <div class="dato-contacto">
                 <span class="icono">
@@ -247,7 +286,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6v12h16V6l-8 5z"/>
                   </svg>
                 </span>
-                <p class="dato-texto"><a href="mailto:sanpedro@achedosol.es">sanpedro@achedosol.es</a></p>
+                <p class="dato-texto"><a href="mailto:sanpedro@achedosol.es">comercial.sp@achedosol.es</a></p>
               </div>
               <div class="dato-contacto">
                 <span class="icono">
@@ -255,7 +294,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/>
                   </svg>
                 </span>
-                <p class="dato-texto">Responsable: Marta López</p>
+                <p class="dato-texto">Responsable: Diego Rivero</p>
               </div>
             </aside>
           </div>
@@ -264,7 +303,7 @@ h1, h2, h3, h4, h5 {
         <!-- Sotogrande -->
         <article class="tienda">
           <div class="tienda-contenedor">
-            <img src="/achedosolSotogrande.webp" alt="Tiendas Achedosol Sotogrande" />
+            <img src="/achedosolSotogrande.webp" alt="Tiendas Achedosol Sotogrande" class="imgSotogrande" />
             <aside class="datos-contacto">
               <h3>Sotogrande</h3>
               <div class="dato-contacto">
@@ -273,7 +312,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 5.5 12 5.5s2.5 1.12 2.5 2.5S13.38 10.5 12 10.5z"/>
                   </svg>
                 </span>
-                <p class="dato-texto"><a href="https://maps.google.com/?q=Calle Sotogrande, 5, 11310 Sotogrande, Cádiz" target="_blank">Calle Sotogrande, 5, 11310 Sotogrande, Cádiz</a></p>
+                <p class="dato-texto"><a href="https://maps.google.com/?q=Calle Sotogrande, 5, 11310 Sotogrande, Cádiz" target="_blank">C/Blanca, Nº 18 Pueblo Nuevo San Roque (Guadiaro)</a></p>
               </div>
               <div class="dato-contacto">
                 <span class="icono">
@@ -281,7 +320,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                   </svg>
                 </span>
-                <p class="dato-texto"><a href="tel:+34952804698">952 80 46 98 ext. 3</a></p>
+                <p class="dato-texto"><a href="tel:+34952804698">952 80 46 96 ext. 3</a></p>
               </div>
               <div class="dato-contacto">
                 <span class="icono">
@@ -289,7 +328,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6v12h16V6l-8 5z"/>
                   </svg>
                 </span>
-                <p class="dato-texto"><a href="mailto:sotogrande@achedosol.es">sotogrande@achedosol.es</a></p>
+                <p class="dato-texto"><a href="mailto:sotogrande@achedosol.es">comercial.sot@achedosol.es</a></p>
               </div>
               <div class="dato-contacto">
                 <span class="icono">
@@ -297,7 +336,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/>
                   </svg>
                 </span>
-                <p class="dato-texto">Responsable: Luis Fernández</p>
+                <p class="dato-texto">Responsable: Eva María Mena Celis</p>
               </div>
             </aside>
           </div>
@@ -306,7 +345,7 @@ h1, h2, h3, h4, h5 {
         <!-- Sabinillas -->
         <article class="tienda">
           <div class="tienda-contenedor">
-            <img src="/achedosolSabinillas.webp" alt="Tiendas Achedosol Sabinillas" />
+            <img src="/achedosolSabinillas.webp" alt="Tiendas Achedosol Sabinillas" class="imgSabinillas" />
             <aside class="datos-contacto">
               <h3>Sabinillas</h3>
               <div class="dato-contacto">
@@ -315,7 +354,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 5.5 12 5.5s2.5 1.12 2.5 2.5S13.38 10.5 12 10.5z"/>
                   </svg>
                 </span>
-                <p class="dato-texto"><a href="https://maps.google.com/?q=Calle Sabinillas, 3, 29692 Sabinillas, Málaga" target="_blank">Calle Sabinillas, 3, 29692 Sabinillas, Málaga</a></p>
+                <p class="dato-texto"><a href="https://maps.google.com/?q=Calle Sabinillas, 3, 29692 Sabinillas, Málaga" target="_blank">Edf. La Noria, Nº 2 Sabinillas-Manilva (Málaga)</a></p>
               </div>
               <div class="dato-contacto">
                 <span class="icono">
@@ -323,7 +362,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                   </svg>
                 </span>
-                <p class="dato-texto"><a href="tel:+34952804699">952 80 46 99 ext. 4</a></p>
+                <p class="dato-texto"><a href="tel:+34952804699">952 80 46 96 ext. 4</a></p>
               </div>
               <div class="dato-contacto">
                 <span class="icono">
@@ -331,7 +370,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6v12h16V6l-8 5z"/>
                   </svg>
                 </span>
-                <p class="dato-texto"><a href="mailto:sabinillas@achedosol.es">sabinillas@achedosol.es</a></p>
+                <p class="dato-texto"><a href="mailto:sabinillas@achedosol.es">comercial.sab@achedosol.es</a></p>
               </div>
               <div class="dato-contacto">
                 <span class="icono">
@@ -339,7 +378,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/>
                   </svg>
                 </span>
-                <p class="dato-texto">Responsable: Ana García</p>
+                <p class="dato-texto">Responsable: Salvador Rubio</p>
               </div>
             </aside>
           </div>
@@ -348,7 +387,7 @@ h1, h2, h3, h4, h5 {
         <!-- Coín -->
         <article class="tienda">
           <div class="tienda-contenedor">
-            <img src="/achedosolCoin.webp" alt="Tiendas Achedosol Coín" />
+            <img src="/achedosolCoin.webp" alt="Tiendas Achedosol Coín" class="imgCoin" />
             <aside class="datos-contacto">
               <h3>Coín</h3>
               <div class="dato-contacto">
@@ -357,7 +396,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M12 2C8.69 2 6 4.69 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.31-2.69-6-6-6zm0 8.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 5.5 12 5.5s2.5 1.12 2.5 2.5S13.38 10.5 12 10.5z"/>
                   </svg>
                 </span>
-                <p class="dato-texto"><a href="https://maps.google.com/?q=Calle Coín, 10, 29100 Coín, Málaga" target="_blank">Calle Coín, 10, 29100 Coín, Málaga</a></p>
+                <p class="dato-texto"><a href="https://maps.google.com/?q=Calle Coín, 10, 29100 Coín, Málaga" target="_blank">C/Pino, Nº 25 Coín (Málaga)</a></p>
               </div>
               <div class="dato-contacto">
                 <span class="icono">
@@ -365,7 +404,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                   </svg>
                 </span>
-                <p class="dato-texto"><a href="tel:+34952804700">952 80 47 00 ext. 5</a></p>
+                <p class="dato-texto"><a href="tel:+34952804700">952 80 46 96 ext. 6</a></p>
               </div>
               <div class="dato-contacto">
                 <span class="icono">
@@ -373,7 +412,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm8 7L4 6v12h16V6l-8 5z"/>
                   </svg>
                 </span>
-                <p class="dato-texto"><a href="mailto:coin@achedosol.es">coin@achedosol.es</a></p>
+                <p class="dato-texto"><a href="mailto:coin@achedosol.es">comercial.co@achedosol.es</a></p>
               </div>
               <div class="dato-contacto">
                 <span class="icono">
@@ -381,7 +420,7 @@ h1, h2, h3, h4, h5 {
                     <path fill="currentColor" d="M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z"/>
                   </svg>
                 </span>
-                <p class="dato-texto">Responsable: Pedro Martínez</p>
+                <p class="dato-texto">Responsable: Ignacio Gil </p>
               </div>
             </aside>
           </div>
