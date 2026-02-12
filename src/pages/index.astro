@@ -3,25 +3,9 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro"; 
 import Header from "../components/Header.astro"; 
 import Proveedores from "../components/Proveedores.astro";
-const proveedores = [
-  { src: '/clever.png', alt: 'clever' },
-  { src: '/daikin.svg', alt: 'daikin' },
-  { src: '/ASP.webp', alt: 'ASP' },
-  { src: '/ariston.svg', alt: 'ariston' },
-  { src: '/Grohe.svg.png', alt: 'Grohe' },
-  { src: '/bombas_ideal.jfif', alt: 'bombas ideal' },
-  { src: '/zodiac.png', alt: 'zodiac' },
-  { src: '/tecnoagua.jfif', alt: 'tecnoagua' },
-  { src: '/sth.jfif', alt: 'sth' },
-  { src: '/roth.png', alt: 'roth' },
-  { src: '/hunter.png', alt: 'hunter' },
-  { src: '/jimten.png', alt: 'jimten' },
-];
 import Tiendas from "../components/Tiendas.astro";
-
 import LatestPosts from "../components/LatestPosts.astro"; 
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts"; 
-
 ---
 <!doctype html>
 <html lang="es">
@@ -62,7 +46,7 @@ h1{
 
    <Tiendas/>
     <h2>Proveedores</h2>
-    <Proveedores logos={proveedores} />
+    <Proveedores/>
 
     <!-- ÚLTIMAS NOTICIAS -->
     <h2>Últimas noticias</h2>
