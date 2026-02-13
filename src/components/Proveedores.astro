@@ -1,58 +1,64 @@
 ---
 const logos = [
-  { src: '/clever.png', alt: 'clever' },
-  { src: '/daikin.svg', alt: 'daikin' },
-  { src: '/ASP.webp', alt: 'ASP' },
-  { src: '/ariston.svg', alt: 'ariston' },
-  { src: '/Grohe.svg.png', alt: 'Grohe' },
-  { src: '/bombas_ideal.jfif', alt: 'bombas ideal' },
-  { src: '/zodiac.png', alt: 'zodiac' },
-  { src: '/tecnoagua.jfif', alt: 'tecnoagua' },
-  { src: '/sth.jfif', alt: 'sth' },
-  { src: '/roth.png', alt: 'roth' },
-  { src: '/hunter.png', alt: 'hunter' },
-  { src: '/jimten.png', alt: 'jimten' },
+  { src: "/clever.png", alt: "clever" },
+  { src: "/daikin.svg", alt: "daikin" },
+  { src: "/ASP.webp", alt: "ASP" },
+  { src: "/ariston.svg", alt: "ariston" },
+  { src: "/Grohe.svg.png", alt: "Grohe" },
+  { src: "/bombas_ideal.jfif", alt: "bombas ideal" },
+  { src: "/zodiac.png", alt: "zodiac" },
+  { src: "/tecnoagua.jfif", alt: "tecnoagua" },
+  { src: "/sth.jfif", alt: "sth" },
+  { src: "/roth.png", alt: "roth" },
+  { src: "/hunter.png", alt: "hunter" },
+  { src: "/jimten.png", alt: "jimten" },
 ];
 ---
+
 <style>
-.proveedores {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  align-items: center;
-  justify-items: center;
-  margin: 40px 0;
-}
-
-.proveedores img {
-  max-width: 120px;
-  height: auto;
-  object-fit: contain;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
   .proveedores {
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+    margin: 40px 0;
   }
-  .proveedores img {
-    max-width: 110px;
-  }
-}
 
-@media (max-width: 480px) {
-  .proveedores {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
   .proveedores img {
-    max-width: 90px;
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
   }
-}
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .proveedores {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .proveedores img {
+      max-width: 110px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .proveedores {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .proveedores img {
+      max-width: 90px;
+    }
+  }
 </style>
 
 <div class="proveedores">
-  {logos.map((logo: { src: string | null | undefined; alt: string | null | undefined; }) => (
-    <img src={logo.src} alt={logo.alt} />
-  ))}
+  {
+    logos.map(
+      (logo: {
+        src: string | null | undefined;
+        alt: string | null | undefined;
+      }) => <img src={logo.src} alt={logo.alt} />,
+    )
+  }
 </div>
