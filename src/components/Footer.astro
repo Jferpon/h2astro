@@ -1,72 +1,65 @@
 ---
 const today = new Date();
 ---
-
+ 
 <style>
   footer {
-    background-color: #2b2b2b;
+    /* 1. GRIS FIJO: Siempre este color, ignore el theme */
+    background-color: var(--footer-bg);
     color: #ffffff;
-    padding: 2.5em 1em 1em 1em;
+    padding: 3em 2rem 1.5em 2rem;
     font-family: Arial, sans-serif;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
-  /* Contenedor principal: tres columnas */
+  /* Contenedor principal */
   footer .top-section {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    /* 2. ESPACIADO CONTROLADO: 'auto' hace que la columna solo ocupe lo que necesita su texto */
+    grid-template-columns: auto auto auto; 
+    /* Centramos todo el bloque de las 3 columnas en el medio del footer */
+    justify-content: center; 
     align-items: flex-start;
-    flex-wrap: nowrap; /* Nunca apilar */
     max-width: 1200px;
-    margin: 0 auto 1.5em auto;
-    gap: 2em;
+    margin: 0 auto 2em auto;
+    /* Ajusta este gap para acercar o alejar Y de Z */
+    gap: clamp(2rem, 8vw, 6rem); 
   }
 
-  /* Logo */
+  /* Logo (X) */
   footer .logo img {
-    width: 10rem;
+    width: clamp(80px, 12vw, 150px);
     height: auto;
+    display: block;
   }
 
-  /* Datos de contacto */
-  footer .contact-info h4 {
-    color: white;
-    margin: 0 0 0.5em 0;
-    font-weight: 700;
-  }
+  /* Datos de contacto (Y) */
   footer .contact-info {
-    flex: 1;
-    font-size: 1rem;
-    margin-left: 18rem; /* Ajusta para mover a la derecha */
+    font-size: 0.92rem; /* Un poco más grande que los enlaces */
+    line-height: 1.5;
+    max-width: 300px; /* Evitamos que el texto se estire demasiado */
   }
-
-  footer .contact-info strong {
+  
+  footer .contact-info h4, footer aside h4 {
+    color: #ffffff;
+    margin: 0 0 0.8em 0;
     font-weight: 700;
-    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   footer .contact-info a {
-    color: #ffffff52;
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
+    transition: color 0.2s ease;
   }
 
-  footer .contact-info a:hover {
-    color: #ffd700;
-  }
-
-  /* Enlaces + redes sociales */
+  /* Enlaces e Interés (Z) */
   footer .right-column {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-left: -5rem; /* Ajusta horizontalmente si es necesario */
-  }
-
-  footer aside h4 {
-    color: white;
-    margin: 0 0 0.5em 0;
-    font-weight: 700;
+    gap: 1.2rem;
   }
 
   footer aside ul {
@@ -75,74 +68,84 @@ const today = new Date();
     margin: 0;
   }
 
-  footer aside li {
-    margin-bottom: 0.5em;
-  }
-
   footer aside a {
-    color: #ffffff52;
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     transition: color 0.2s;
-    font-size: 1rem;
+    font-size: 0.85rem; /* Un poco más pequeña que el contacto */
+    display: block;
+    margin-bottom: 0.4rem;
   }
 
-  footer aside a:hover {
-    color: #ffd700;
+  /* 3. HOVER AMARILLO */
+  footer aside a:hover, 
+  footer .contact-info a:hover {
+    color: #ffd700 !important; 
   }
 
   footer .social-links {
     display: flex;
-    gap: 1em;
-  }
-
-  footer .social-links a {
-    color: white;
-    width: 28px;
-    height: 28px;
-    display: inline-flex;
+    gap: 1rem;
   }
 
   footer .social-links svg {
-    fill: currentColor;
-    width: 100%;
-    height: 100%;
-    transition: opacity 0.2s ease;
+    fill: #ffffff;
+    width: 22px;
+    height: 22px;
+    transition: fill 0.2s, transform 0.2s;
   }
 
   footer .social-links a:hover svg {
-    opacity: 0.7;
+    fill: #ffd700;
+    transform: scale(1.1);
   }
 
-  /* Línea separadora */
+  /* --- RESPONSIVE --- */
+  @media (max-width: 1024px) {
+    footer .top-section {
+      /* Reducimos el espacio entre columnas en tablets */
+      gap: 3rem; 
+    }
+  }
+
+  @media (max-width: 768px) {
+    footer {
+      padding: 2em 1rem;
+    }
+
+    footer .top-section {
+      /* En móviles mantenemos X--Y--Z pero con espacio mínimo */
+      grid-template-columns: auto auto auto;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+
+    footer .logo img {
+      max-width: 65px;
+      margin-top: 2rem;
+    }
+
+    footer .contact-info, 
+    footer aside a {
+      font-size: 0.75rem;
+    }
+    
+    footer .contact-info h4, footer aside h4 {
+      font-size: 0.8rem;
+    }
+  }
+
   footer hr {
     border: 0;
-    border-top: 1px solid #555555;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin: 1.5em 0;
   }
 
-  /* Copy centrado */
   footer .copy {
     text-align: center;
-    font-size: 0.9rem;
-    margin-top: 1em;
-  }
-
-  /* Responsive */
-  @media (max-width: 1024px) {
-    footer .top-section {
-      flex-wrap: wrap; /* permite que las columnas se ajusten si no caben */
-      justify-content: flex-start; /* mantiene el flujo horizontal */
-    }
-
-    /* No cambiamos flex-direction, mantenemos siempre fila */
-    footer .contact-info,
-    footer .right-column {
-      margin-left: 1rem; /* pequeño ajuste si es necesario */
-    }
-
-    footer .social-links {
-      justify-content: flex-start;
-    }
+    opacity: 0.5;
+    font-size: 0.75rem;
+    color: #fff;
   }
 </style>
 
