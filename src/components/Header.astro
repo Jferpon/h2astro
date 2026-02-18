@@ -1,8 +1,10 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header>
+  
   <nav class="nav">
     <!-- LOGO -->
     <a href="/" class="logo" aria-label="Achedosol">
@@ -30,10 +32,11 @@ import HeaderLink from "./HeaderLink.astro";
 
     <!-- ENLACES -->
     <div class="internal-links">
-      <HeaderLink href="/">Productos</HeaderLink>
+      <HeaderLink href="/productos">Productos</HeaderLink>
       <HeaderLink href="/blog">Blog</HeaderLink>
       <HeaderLink href="/miAchedosol">Mi Achedosol</HeaderLink>
       <HeaderLink href="/about">Tienda Online</HeaderLink>
+      <ThemeToggle />
     </div>
   </nav>
 </header>
@@ -44,8 +47,10 @@ import HeaderLink from "./HeaderLink.astro";
 =========================== */
   header {
     padding: 0 1rem;
-    background: rgb(53, 117, 255);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+   background: var(--header-bg); 
+  
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease; /* Para que el cambio de color sea suave */
   }
 
   /* ===========================

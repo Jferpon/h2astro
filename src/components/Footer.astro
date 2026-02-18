@@ -16,7 +16,7 @@ const today = new Date();
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Nunca apilar */
     max-width: 1200px;
     margin: 0 auto 1.5em auto;
     gap: 2em;
@@ -36,13 +36,13 @@ const today = new Date();
   }
   footer .contact-info {
     flex: 1;
-    font-size: 1rem; /* mismo tamaño que enlaces */
-    margin-left: 18rem; /* separa de logo */
+    font-size: 1rem;
+    margin-left: 18rem; /* Ajusta para mover a la derecha */
   }
 
   footer .contact-info strong {
     font-weight: 700;
-    color:white
+    color: white;
   }
 
   footer .contact-info a {
@@ -60,7 +60,7 @@ const today = new Date();
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: -5rem;
+    margin-left: -5rem; /* Ajusta horizontalmente si es necesario */
   }
 
   footer aside h4 {
@@ -83,7 +83,7 @@ const today = new Date();
     color: #ffffff52;
     text-decoration: none;
     transition: color 0.2s;
-    font-size: 1rem; 
+    font-size: 1rem;
   }
 
   footer aside a:hover {
@@ -130,20 +130,18 @@ const today = new Date();
   /* Responsive */
   @media (max-width: 1024px) {
     footer .top-section {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      flex-wrap: wrap; /* permite que las columnas se ajusten si no caben */
+      justify-content: flex-start; /* mantiene el flujo horizontal */
     }
 
+    /* No cambiamos flex-direction, mantenemos siempre fila */
     footer .contact-info,
     footer .right-column {
-      align-items: center;
-      margin-left: 0;
-      margin-top: 1em;
+      margin-left: 1rem; /* pequeño ajuste si es necesario */
     }
 
     footer .social-links {
-      justify-content: center;
+      justify-content: flex-start;
     }
   }
 </style>
