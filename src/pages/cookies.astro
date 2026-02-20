@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+    title="Política de Privacidad y Cookies"
+    description="Política de privacidad y cookies de Achedosol"
+    category="About"  
+/>
+  <main class="legal-page">
+    <section class="content">  
+      <p class="first-paragraph">
+        La web <strong>www.achedosol.com</strong> utiliza cookies para facilitar la interactuación de sus usuarios y para poder elaborar estadísticas sobre las visitas que recibe. En cumplimiento de la Directiva 2009/136/CE, siguiendo las directrices de la Agencia Española de Protección de Datos, informamos detalladamente del uso que se realiza en nuestra web.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        Las cookies son pequeñas cantidades de información que se almacenan en el navegador utilizado por cada usuario para que el servidor recuerde ese usuario con posterioridad. Esta información no revela su identidad, pero permite identificarle como un usuario que ya visitó la web, guardar sus preferencias personales e información técnica de visitas.
+      </p>
+      
+      <p>Si no desea que se almacenen cookies, puede configurar su navegador:</p>
+      <ul>
+        <li>Las cookies se rechazan siempre;</li>
+        <li>El navegador pregunta antes de instalar cada cookie;</li>
+        <li>Las cookies se aceptan siempre;</li>
+      </ul>
+
+      <p>Otras opciones de configuración habituales:</p>
+      <ul>
+        <li>Rechazar cookies de determinados dominios;</li>
+        <li>Rechazar cookies de terceros;</li>
+        <li>Aceptar cookies como no persistentes (se eliminan al cerrar el navegador);</li>
+        <li>Permitir al servidor crear cookies para un dominio diferente.</li>
+      </ul>
+
+      <div class="links-box">
+        <p><strong>Configuración en los navegadores más usados:</strong></p>
+        <ul>
+          <li><a href="http://support.google.com/chrome/bin/answer.py?hl=es&answer=95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+          <li><a href="https://support.microsoft.com/es-es/windows/eliminar-y-administrar-cookies-168dab11-0753-043d-7c16-ede5947fc64d" target="_blank" rel="noopener noreferrer">Internet Explorer / Edge</a></li>
+          <li><a href="http://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-que-los-sitios-we" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+          <li><a href="http://support.apple.com/kb/ph5042" target="_blank" rel="noopener noreferrer">Safari</a></li>
+        </ul>
+      </div>
+
+      <h2>Contenido incrustado de otros sitios web</h2>
+      <p>
+        Los artículos de este sitio pueden incluir contenido incrustado (vídeos, imágenes, etc.). El contenido incrustado de otras webs se comporta exactamente igual que si el visitante hubiera visitado la otra web directamente.
+      </p>
+
+      <h2>Cuánto tiempo conservamos tus datos</h2>
+      <p>
+        De los usuarios que se registran en nuestra web, almacenamos la información personal que proporcionan en su perfil. Todos los usuarios pueden ver, editar o eliminar su información personal en cualquier momento (excepto el nombre de usuario).
+      </p>
+
+      <h2>Qué derechos tienes sobre tus datos</h2>
+      <p>
+        Si tienes una cuenta, puedes solicitar un archivo de exportación de los datos personales que tenemos sobre ti, incluyendo cualquier dato que nos hayas proporcionado. También puedes solicitar que eliminemos cualquier dato personal. Esto no incluye datos que estemos obligados a conservar con fines administrativos, legales o de seguridad.
+      </p>
+    </section>
+  </main>
+
+
+<style>
+  /* Quitamos paddings excesivos para que el texto respire pero no flote */
+  .legal-page {
+    padding: 1rem 0;
+  }
+
+  .content {
+    /* El ancho lo controla el .prose del Layout, aquí solo ajustamos el texto */
+    text-align: left;
+  }
+
+  /* Ajuste para pegar el primer párrafo al título (H1) que viene del Layout */
+  .first-paragraph {
+    margin-top: -0.5rem; 
+    line-height: 1.8;
+  }
+
+  h2 {
+    color: rgb(var(--black));
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: rgb(var(--gray-dark));
+  }
+
+  ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  li {
+    margin-bottom: 0.6rem;
+    list-style: disc;
+    color: rgb(var(--gray-dark));
+  }
+
+  a {
+    color: var(--header-bg);
+    text-decoration: underline;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: #ffd700; /* Hover amarillo corporativo */
+  }
+
+  .links-box {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2.5rem 0;
+    border: 1px solid rgba(var(--gray-light), 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .legal-page {
+      padding: 0.5rem 0;
+    }
+  }
+</style>

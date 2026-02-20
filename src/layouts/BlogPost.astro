@@ -9,14 +9,17 @@ import Header from '../components/Header.astro';
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+// Comprobamos si es una página legal (sin fecha) para ajustar el estilo
+const isLegalPage = !pubDate;
 ---
 
-<html lang="en">
+<html lang="es">
 <head>
   <BaseHead title={title} description={description} />
   <style>
     main {
-      width: calc(100% - 2em);
+      width: 100%;
       max-width: 100%;
       margin: 0;
     }
@@ -33,7 +36,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     }
 
     .prose {
-      width: 720px;
+      width: 900px; /* Un poco más ancho para lectura legal */
       max-width: calc(100% - 2em);
       margin: auto;
       padding: 1em;
@@ -42,13 +45,15 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
     .title {
       margin-bottom: 1em;
-      padding: 1em 0;
-      text-align: center;
-      line-height: 1;
+      padding: 1em 0 0 0; /* Quitamos padding inferior para pegarlo al texto */
+      /* Si es legal, alinea a la izquierda. Si no, al centro */
+      text-align: var(--title-align, center); 
+      line-height: 1.2;
     }
 
     .title h1 {
       margin: 0 0 0.5em 0;
+      font-size: 2.5rem;
     }
 
     .date {
@@ -59,31 +64,37 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     .last-updated-on {
       font-style: italic;
     }
+
+    /* Clase especial para cuando queremos todo a la izquierda (Cookies/Privacidad) */
+    .align-left {
+      text-align: left !important;
+    }
   </style>
 </head>
 
 <body>
-  <!-- Header -->
   <Header />
 
-
-  <!-- Contenido principal -->
   <main>
     <article>
-      <div class="hero-image">
-        {heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
-      </div>
+      {heroImage && (
+        <div class="hero-image">
+          <Image width={1020} height={510} src={heroImage} alt="" />
+        </div>
+      )}
 
       <div class="prose">
-        <div class="title">
-          <div class="date">
-            <FormattedDate date={pubDate} />
-            {updatedDate && (
-              <div class="last-updated-on">
-                Last updated on <FormattedDate date={updatedDate} />
-              </div>
-            )}
-          </div>
+        <div class={isLegalPage ? "title align-left" : "title"}>
+          {pubDate && (
+            <div class="date">
+              <FormattedDate date={pubDate} />
+              {updatedDate && (
+                <div class="last-updated-on">
+                  Última actualización el <FormattedDate date={updatedDate} />
+                </div>
+              )}
+            </div>
+          )}
           <h1>{title}</h1>
           <hr />
         </div>
@@ -92,7 +103,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     </article>
   </main>
 
-  <!-- Footer -->
   <Footer />
 </body>
 </html>
