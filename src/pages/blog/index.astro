@@ -7,9 +7,13 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (await getCollection('blog'))
+    // 1. Solo nos quedamos con los que SI tienen fecha (filtramos legales)
+    .filter((post) => post.data.pubDate !== undefined)
+    // 2. Ahora TypeScript sabe que b.data.pubDate existe y puede ordenar
+    .sort(
+        (a, b) => b.data.pubDate!.valueOf() - a.data.pubDate!.valueOf()
+    );
 ---
 <!DOCTYPE html>
 <html lang="es">
@@ -121,9 +125,9 @@ ul a:hover img {
 										<Image width={720} height={360} src={post.data.heroImage} alt="" />
 									)}
 									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
+                  <p class="date">
+                    <FormattedDate date={post.data.pubDate!} />
+                  </p>
 								</a>
 							</li>
 						))
