@@ -50,7 +50,8 @@
    ========================================= */
 body {
   /* ... tus estilos de fuente ... */
-  
+  margin:0;
+  padding:0;
   /* Usamos la variable del fondo suave */
   background-color: rgb(var(--bg-body, 255, 255, 255));
   
