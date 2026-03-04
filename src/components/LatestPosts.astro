@@ -3,7 +3,11 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog'))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .sort((a, b) => {
+    const dateB = b.data.pubDate?.valueOf() ?? 0;
+    const dateA = a.data.pubDate?.valueOf() ?? 0;
+    return dateB - dateA;
+  })
   .slice(0, 3);
 ---
 
@@ -144,12 +148,12 @@ const posts = (await getCollection('blog'))
 
 <ul class="latest-posts">
   {posts.map((post) => {
-    const day = post.data.pubDate.toLocaleDateString('es-ES', {
+    const day = post.data.pubDate?.toLocaleDateString('es-ES', {
       day: '2-digit',
-    });
-    const month = post.data.pubDate.toLocaleDateString('es-ES', {
+    }) ?? '';
+    const month = post.data.pubDate?.toLocaleDateString('es-ES', {
       month: 'short',
-    });
+    }) ?? '';
 
     return (
       <li>
