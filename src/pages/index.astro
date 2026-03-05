@@ -11,6 +11,32 @@ import Reviews from "../components/Reviews.astro";
 <!doctype html>
 <html lang="es">
 <head>
+  <script is:inline>
+      // 1. Metemos la lógica en una función
+      const applyTheme = () => {
+        const theme = (() => {
+          if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+            return localStorage.getItem('theme');
+          }
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+          }
+          return 'light';
+        })();
+
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      };
+
+      // 2. Ejecutamos la función en la carga inicial
+      applyTheme();
+
+      // 3. LA MAGIA: Le decimos a Astro que vuelva a ejecutar esto justo después de cambiar de página
+      document.addEventListener('astro:after-swap', applyTheme);
+    </script>
   <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   <style>
   /* ===== LAYOUT GENERAL ===== */
