@@ -1,18 +1,141 @@
 ---
-
+// Achedosol.astro
 ---
-<h3>tu mejor seleccion</h3>
+
+<section class="achedosol-container">
+  
+  <div class="bloque-superior">
+    <div class="media">
+      <video src="/videoachedosol.mp4" autoplay loop muted playsinline controls></video>
+    </div>
+    <div class="texto">
+      <h3>tu mejor seleccion</h3>      
+      <p><b>Montes Torres</b> somos una empresa que lleva desde el 18 de Noviembre de 2002 dando soluciones a nuestros clientes y amigos. Además cuenta con una red de tiendas achedosol dedicadas al suministro y asesoramiento de productos de fontanería, piscinas, riego, climatización y más.</p> 
+      <p>Nuestra seña de identidad es el servicio, asesoramiento, entrega y suministros inmediatos para satisfacer las necesidades de todos nuestros clientes y amigos. Todo esto es posible gracias a la gran variedad y stock de productos en nuestras tiendas, como a nuestra infraestructura tecnológica desde nuestra plataforma EDOS</p>
+    </div>
+  </div>
+
+  <div class="bloque-inferior">
+    <div class="texto">
+      <h3>achedosol con el deporte</h3>
+
+    </div>
+    <div class="media">
+      <img src="/achedosolDeporte.webp" alt="Imagen de Achedosol Deporte" />
+    </div>
+  </div>
+
+</section>
+
 <style>
-@font-face {
+  /* === FUENTES Y ESTILOS DE TEXTO === */
+  @font-face {
     font-family: 'inkburrow';
-    src:
-         url('/fonts/Inkburro.woff') format('woff');
+    src: url('/fonts/Inkburro.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}
-    h3{
-      font-family: "inkburrow", Sans-serif;
-   font-size: 30px;
-   color: #FC0;  
+    font-display: swap;
+  }
+
+  h3 {
+    font-family: "inkburrow", sans-serif;
+    font-size: 30px;
+    color: #FC0;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  p {
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* === CONTENEDOR PRINCIPAL === */
+  .achedosol-container {
+    display: flex;
+    flex-direction: column;
+    /* TRUCO: Fuerza a que el div ocupe todo el ancho de la pantalla ignorando márgenes del body o contenedores padre */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* === ESTILOS GENERALES DE LOS BLOQUES === */
+  .bloque-superior,
+  .bloque-inferior {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem;
+    gap: 3rem;
+  }
+
+  /* === EFECTO GOTA DE AGUA (Bloque Azul) === */
+  .bloque-superior {
+    background-color: rgb(53, 117, 255);
+    color: white;
+    /* Crea la curva inferior para dar la sensación ovalada/gota */
+    border-bottom-left-radius: 50% 4rem;
+    border-bottom-right-radius: 50% 4rem;
+    /* Añadimos un poco de padding extra abajo para que el texto no choque con la curva */
+    padding-bottom: 6rem; 
+    margin-bottom: 2rem; /* Separación con el bloque de abajo */
+  }
+
+  .bloque-inferior {
+    background-color: #ffffff;
+    color: #333333;
+  }
+
+  /* === CONTENEDORES DE CONTENIDO Y MEDIOS EN REM === */
+  .media, 
+  .texto {
+    width: 100%;
+  }
+
+  /* Aquí aplicamos las medidas más grandes en REM */
+  .media video,
+  .media img {
+    width: 100%;
+    /* Altura fija en rem para hacerlos más imponentes */
+    height: 25rem; 
+    /* object-fit: cover evita que la imagen o video se deformen (se estiren feo) al forzar una altura */
+    object-fit: cover; 
+    border-radius: 1rem; 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    display: block;
+  }
+
+  /* === DISEÑO RESPONSIVE (Tablets y Desktop) === */
+  @media (min-width: 768px) {
+    .bloque-superior,
+    .bloque-inferior {
+      flex-direction: row;
+      justify-content: center; /* Centramos el contenido */
+      padding: 5rem 10vw; /* Usamos vw para que respire por los lados */
     }
+
+    .bloque-superior {
+      padding-bottom: 7rem; /* Curva más pronunciada en PC, requiere más espacio */
+    }
+
+    .media {
+      /* Le damos más prioridad de espacio a la imagen/video usando rem como base */
+      flex: 1 1 35rem; 
+      max-width: 45rem; /* Límite máximo para que no se vea gigante en pantallas ultra anchas */
+    }
+    
+    .texto {
+      /* El texto ocupará un poco menos de espacio que los medios */
+      flex: 1 1 25rem;
+      max-width: 35rem;
+    }
+
+    /* Aumentamos un poco más la altura en PC */
+    .media video,
+    .media img {
+      height: 30rem; 
+    }
+  }
 </style>
