@@ -1,8 +1,3 @@
-# Astro Starter Kit: Blog
-
-```sh
-npm create astro@latest -- --template blog
-```
 ## 🚀 Estructura del proyecto 
 
 En este protecto se sigue la siguiente estructura:
@@ -24,7 +19,7 @@ En este protecto se sigue la siguiente estructura:
 
 Cualquier imagen se añade a la carpeta public o si es una portada a assets
 
-## 🧞 Comandos
+## Comandos
 
 Estos comandos son muy utiles de cara al proyecto 
 
