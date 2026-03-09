@@ -18,7 +18,9 @@
   <div class="bloque-inferior">
     <div class="texto">
       <h3>achedosol con el deporte</h3>
-
+<p>Montes Torres y tiendas achedosol somos una firma muy vinculada al deporte, a través de patrocinios y colaboraciones a entidades y deportistas, ayudándoles y haciéndoles crecer institucionalmente.</p>
+<p>Llevamos años apoyando al deporte, a la cultura y a las tradiciones de nuestra tierra, además de a proyectos y campañas solidarias.</p>
+<p>Para nosotros, el deporte transmite unos valores muy parecidos al del mundo empresarial, donde destacan la responsabilidad, la solidaridad, el esfuerzo, la ilusión y el equipo. El deporte es salud y para achedosol no existe un mundo sin deporte.</p>  
     </div>
     <div class="media">
       <img src="/achedosolDeporte.webp" alt="Imagen de Achedosol Deporte" />
@@ -39,68 +41,74 @@
 
   h3 {
     font-family: "inkburrow", sans-serif;
-    font-size: 30px;
+    font-size: 45px;
     color: #FC0;
-    margin-top: 0;
+    margin-top: -30px; /* Desplazado aún más hacia arriba */
     margin-bottom: 15px;
   }
 
   p {
     line-height: 1.6;
-    font-size: 16px;
+    font-size: 16px; /* Tamaño base para móviles */
   }
 
   /* === CONTENEDOR PRINCIPAL === */
   .achedosol-container {
     display: flex;
     flex-direction: column;
-    /* TRUCO: Fuerza a que el div ocupe todo el ancho de la pantalla ignorando márgenes del body o contenedores padre */
+    /* TRUCO: Fuerza a que el div ocupe todo el ancho de la pantalla */
     width: 100vw;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    overflow-x: hidden;
   }
 
   /* === ESTILOS GENERALES DE LOS BLOQUES === */
   .bloque-superior,
   .bloque-inferior {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Forzamos a que siempre estén en fila, sin apilarse */
     align-items: center;
-    padding: 3rem 2rem;
-    gap: 3rem;
+    justify-content: center;
+    padding: 3rem 2vw;
+    gap: 1.5rem;
   }
 
   /* === EFECTO GOTA DE AGUA (Bloque Azul) === */
   .bloque-superior {
     background-color: rgb(53, 117, 255);
     color: white;
-    /* Crea la curva inferior para dar la sensación ovalada/gota */
     border-bottom-left-radius: 50% 4rem;
     border-bottom-right-radius: 50% 4rem;
-    /* Añadimos un poco de padding extra abajo para que el texto no choque con la curva */
     padding-bottom: 6rem; 
-    margin-bottom: 2rem; /* Separación con el bloque de abajo */
+    margin-bottom: 2rem;
   }
 
+  /* === BLOQUE INFERIOR Y MODO OSCURO === */
   .bloque-inferior {
     background-color: #ffffff;
     color: #333333;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  /* === CONTENEDORES DE CONTENIDO Y MEDIOS EN REM === */
+  /* Detecta la clase global .dark en el HTML y aplica estos estilos */
+  :global(.dark) .bloque-inferior {
+    background-color: var(--bg-dark);
+    color: #f1f1f1;
+  }
+
+  /* === CONTENEDORES DE CONTENIDO Y MEDIOS === */
   .media, 
   .texto {
+    flex: 1 1 50%;
     width: 100%;
   }
 
-  /* Aquí aplicamos las medidas más grandes en REM */
   .media video,
   .media img {
     width: 100%;
-    /* Altura fija en rem para hacerlos más imponentes */
-    height: 25rem; 
-    /* object-fit: cover evita que la imagen o video se deformen (se estiren feo) al forzar una altura */
+    height: 15rem;
     object-fit: cover; 
     border-radius: 1rem; 
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
@@ -111,31 +119,22 @@
   @media (min-width: 768px) {
     .bloque-superior,
     .bloque-inferior {
-      flex-direction: row;
-      justify-content: center; /* Centramos el contenido */
-      padding: 5rem 10vw; /* Usamos vw para que respire por los lados */
+      padding: 5rem 10vw;
+      gap: 3rem;
     }
 
     .bloque-superior {
-      padding-bottom: 7rem; /* Curva más pronunciada en PC, requiere más espacio */
+      padding-bottom: 7rem; 
     }
 
-    .media {
-      /* Le damos más prioridad de espacio a la imagen/video usando rem como base */
-      flex: 1 1 35rem; 
-      max-width: 45rem; /* Límite máximo para que no se vea gigante en pantallas ultra anchas */
-    }
-    
-    .texto {
-      /* El texto ocupará un poco menos de espacio que los medios */
-      flex: 1 1 25rem;
-      max-width: 35rem;
-    }
-
-    /* Aumentamos un poco más la altura en PC */
     .media video,
     .media img {
-      height: 30rem; 
+      height: 30rem;
+    }
+
+    /* Aumentamos el tamaño del párrafo solo en versión escritorio */
+    p {
+      font-size: 20px;
     }
   }
 </style>

@@ -6,59 +6,39 @@
    VARIABLES GLOBALES (Modo Claro por defecto)
    ========================================= */
 :root {
-  /* ... tus otras variables ... */
-  
-  /* Azul original vibrante para modo claro */
+  /* Fondo y Componentes */
+  --bg-body: 255, 255, 255; 
   --header-bg: rgb(53, 117, 255); 
-  
-  /* Fondo de tarjetas/aside en blanco */
   --card-bg: #ffffff; 
-  
-  /* Color de texto oscuro estándar */
-  --text-main: 50, 50, 50; 
-
   --footer-bg: #2b2b2b;
+
+  /* Colores de Texto (Actualizados a negro puro) */
+  --black: 0, 0, 0;         /* Títulos oscuros */
+  --gray-dark: 0, 0, 0;     /* Texto de párrafos completamente negro */
+  --gray-light: 240, 240, 240; 
+  
+  /* Acentos y Enlaces */
+  --accent: #3575ff; 
 }
 
 /* =========================================
    MODO OSCURO (Suavizado)
    ========================================= */
 :root.dark {
-  /* 1. CABECERA: Un azul marino desaturado (menos agresivo) */
+  --bg-body: 28, 32, 40; /* Tono Slate elegante */
   --header-bg: rgb(30, 45, 80); 
-
-  /* 2. FONDO: Gris oscuro azulado (No negro puro) */
-  /* RGB: 28, 32, 40 -> Un tono "Slate" muy elegante */
-  --bg-body: 28, 32, 40; 
-  
-  /* 3. TARJETAS/ASIDE: Un poco más claro que el fondo para destacar */
   --card-bg: rgb(45, 50, 65);
-
-  /* 4. TEXTO: Blanco suave (no #FFF puro para no quemar la vista) */
+  --footer-bg: #2b2b2b;
   --black: 235, 235, 235;      /* Títulos */
   --gray-dark: 210, 215, 225;  /* Párrafos */
+  --gray-light: 60, 65, 80;    /* Bordes y fondos de código */
   
-  /* Resto de ajustes de contraste */
   --accent: #7d8aff; 
-  --gray-light: 60, 65, 80; /* Bordes y fondos de código */
-  --gray-gradient: none; /* Quitamos el degradado en dark para un look más limpio y plano */
-  --footer-bg: #2b2b2b;
 }
 
 /* =========================================
-   BODY ACTUALIZADO
+   TIPOGRAFÍA Y RESET BÁSICO
    ========================================= */
-body {
-  /* ... tus estilos de fuente ... */
-  margin:0;
-  padding:0;
-  /* Usamos la variable del fondo suave */
-  background-color: rgb(var(--bg-body, 255, 255, 255));
-  
-  color: rgb(var(--gray-dark));
-  min-height: 100vh; /* Asegura que cubra toda la pantalla */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
 @font-face {
   font-family: "Atkinson";
   src: url("/fonts/atkinson-regular.woff") format("woff");
@@ -75,7 +55,19 @@ body {
   font-display: swap;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Atkinson", sans-serif;
+  background-color: rgb(var(--bg-body));
+  color: rgb(var(--gray-dark));
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+/* =========================================
+   ESTRUCTURA PRINCIPAL Y CONTENIDO
+   ========================================= */
 main {
   width: 720px;
   max-width: calc(100% - 2em);
@@ -97,31 +89,131 @@ h5 { font-size: 1.25em; }
 
 strong, b { font-weight: 700; }
 
-a { color: var(--accent); }
-a:hover { color: var(--accent); }
+a { 
+  color: var(--accent); 
+  transition: opacity 0.2s ease;
+}
+a:hover { opacity: 0.8; }
 
-p { margin-bottom: 1em; }
-.prose p { margin-bottom: 2em; }
+p { 
+  margin-bottom: 1em; 
+  font-size: 1.15rem; /* Aumenta el tamaño del texto (aprox. 18.4px) */
+  line-height: 1.6;   /* Da un poco más de aire entre las líneas para que sea fácil de leer */
+}
 
-textarea, input { width: 100%; font-size: 16px; }
+.prose p { 
+  margin-bottom: 2em; 
+}
 
-table { width: 100%; }
+table { width: 100%; border-collapse: collapse; }
 
-img { max-width: 100%; height: auto; border-radius: 8px; }
+img, picture { 
+  display: block;
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
+}
 
-code { padding: 2px 5px; background-color: rgb(var(--gray-light)); border-radius: 2px; }
+/* =========================================
+   CÓDIGO Y CITAS
+   ========================================= */
+code { 
+  padding: 2px 5px; 
+  background-color: rgb(var(--gray-light)); 
+  border-radius: 4px; 
+}
 
-pre { padding: 1.5em; border-radius: 8px; }
+pre { 
+  padding: 1.5em; 
+  border-radius: 8px; 
+  background-color: rgb(var(--gray-light));
+  overflow-x: auto; /* Evita que el código largo rompa el diseño */
+}
 pre > code { all: unset; }
 
-blockquote { border-left: 4px solid var(--accent); padding-left: 20px; font-size: 1.333em; margin:0; }
-hr { border: none; border-top: 1px solid rgb(var(--gray-light)); }
+blockquote { 
+  border-left: 4px solid var(--accent); 
+  padding-left: 20px; 
+  font-size: 1.333em; 
+  margin: 0; 
+  font-style: italic;
+}
+
+hr { 
+  border: none; 
+  border-top: 1px solid rgb(var(--gray-light)); 
+  margin: 2em 0;
+}
+
+/* =========================================
+   FORMULARIOS Y BUSCADOR
+   ========================================= */
+textarea, input { 
+  width: 100%; 
+  font-size: 16px; 
+  font-family: inherit;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1em 0;
+  gap: 1em; /* Maneja el espaciado interno sin usar margins */
+}
+
+.header-logo {
+  flex: 0 0 auto;
+  width: auto;
+  max-height: clamp(40px, 8vw, 60px); /* Escalado fluido */
+}
+
+.header-search {
+  flex: 1 1 300px;
+  min-width: 200px;
+}
+
+.header-search input {
+  width: 100%;
+  padding: 0.6em 1em;
+  font-size: clamp(14px, 2vw, 16px);
+  box-sizing: border-box;
+  border: 1px solid rgb(var(--gray-light));
+  border-radius: 6px;
+  background-color: var(--card-bg);
+  color: rgb(var(--gray-dark));
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-search input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(53, 117, 255, 0.2);
+}
+
+/* =========================================
+   MEDIA QUERIES (Responsividad simplificada)
+   ========================================= */
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .header-search {
+    width: 100%;
+    max-width: 400px;
+    flex: 1 1 auto;
+  }
+}
 
 @media (max-width: 720px) {
   body { font-size: 18px; }
   main { padding: 1em; }
 }
 
+/* Accesibilidad: Ocultar visualmente pero dejar para lectores de pantalla */
 .sr-only {
   border: 0;
   padding: 0;
@@ -133,74 +225,4 @@ hr { border: none; border-top: 1px solid rgb(var(--gray-light)); }
   clip: rect(1px 1px 1px 1px);
   clip-path: inset(50%);
   white-space: nowrap;
-}
-
-/* ----------------- CABECERA Y BUSCADOR ----------------- */
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap; /* permite que el input baje antes de deformarse */
-  padding: 1em 0;
-}
-
-.header-logo {
-  flex: 0 0 auto; /* nunca se encoge */
-  max-height: 60px;
-  width: auto;
-}
-
-.header-search {
-  flex: 1 1 300px; /* ocupa espacio pero no desaparece */
-  margin-left: 1em;
-  min-width: 200px; /* evita que se haga demasiado pequeño */
-}
-
-.header-search input {
-  width: 100%;
-  padding: 0.5em;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-/* ----------------- BREAKPOINT: 670px - 1024px ----------------- */
-@media (max-width: 1024px) and (min-width: 670px) {
-  .header {
-    flex-direction: column; /* logo arriba, input abajo */
-    align-items: center;
-  }
-  .header-logo { max-height: 55px; margin-bottom: 1em; }
-  .header-search {
-    width: 80%;
-    margin-left: 0;
-    text-align: center;
-  }
-  .header-search input { width: 100%; max-width: 350px; font-size: 16px; }
-}
-
-/* ----------------- BREAKPOINT: <670px (móvil) ----------------- */
-@media (max-width: 669px) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-  }
-  .header-logo { max-height: 50px; margin-bottom: 0.8em; }
-  .header-search {
-    width: 95%;
-    margin-left: 0;
-    text-align: center;
-  }
-  .header-search input {
-    width: 100%;
-    max-width: 300px;
-    font-size: 15px;
-  }
-}
-
-/* ----------------- ESCALADO FLUIDO ----------------- */
-.header-logo { max-height: clamp(40px, 8vw, 60px); }
-.header-search input { font-size: clamp(14px, 2vw, 16px); }
-picture {
-	display: block;
 }

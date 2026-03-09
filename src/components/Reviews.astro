@@ -1,7 +1,17 @@
----
+<div class="reviews-wrapper">
+  <script src="https://elfsightcdn.com/platform.js" async></script>
+  <div class="elfsight-app-8d7fa8f1-4a24-49c0-9553-5d2fc588e50a" data-elfsight-app-lazy></div>
+</div>
 
----
-<!-- Elfsight Google Reviews | Untitled Google Reviews -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-8d7fa8f1-4a24-49c0-9553-5d2fc588e50a" data-elfsight-app-lazy></div>
+<style>
+  /* En modo claro se ve normal */
+  .reviews-wrapper {
+    filter: none;
+    transition: filter 0.3s ease;
+  }
 
+  /* En modo oscuro invertimos los colores y ajustamos el tono */
+  :global(.dark) .reviews-wrapper {
+    filter: invert(0.9) hue-rotate(180deg) brightness(1.1);
+  }
+</style>
