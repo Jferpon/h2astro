@@ -67,7 +67,7 @@ const categorias = [
             <ul>
               {grupo.items.map((item) => (
                 <li>
-                  <a href={`/categorias/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`}>
+                  <a href={`/${item.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, '-')}`}>
                     {item}
                   </a>
                 </li>
