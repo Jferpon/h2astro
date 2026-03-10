@@ -1,40 +1,42 @@
 ---
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import BaseHead from "../../components/BaseHead.astro";
+import Footer from "../../components/Footer.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Header from "../../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 
-const posts = (await getCollection('blog'))
-    // 1. Solo nos quedamos con los que SI tienen fecha (filtramos legales)
-    .filter((post) => post.data.pubDate !== undefined)
-    // 2. Ahora TypeScript sabe que b.data.pubDate existe y puede ordenar
-    .sort(
-        (a, b) => b.data.pubDate!.valueOf() - a.data.pubDate!.valueOf()
-    );
+const posts = (await getCollection("blog"))
+  // 1. Solo nos quedamos con los que SI tienen fecha (filtramos legales)
+  .filter((post) => post.data.pubDate !== undefined)
+  // 2. Ahora TypeScript sabe que b.data.pubDate existe y puede ordenar
+  .sort((a, b) => b.data.pubDate!.valueOf() - a.data.pubDate!.valueOf());
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
-	<head>
+  <head>
     <script is:inline>
       // 1. Metemos la lógica en una función
       const applyTheme = () => {
         const theme = (() => {
-          if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-            return localStorage.getItem('theme');
+          if (
+            typeof localStorage !== "undefined" &&
+            localStorage.getItem("theme")
+          ) {
+            return localStorage.getItem("theme");
           }
-          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            return 'dark';
+          if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            return "dark";
           }
-          return 'light';
+          return "light";
         })();
 
-        if (theme === 'dark') {
-          document.documentElement.classList.add('dark');
+        if (theme === "dark") {
+          document.documentElement.classList.add("dark");
         } else {
-          document.documentElement.classList.remove('dark');
+          document.documentElement.classList.remove("dark");
         }
       };
 
@@ -42,125 +44,130 @@ const posts = (await getCollection('blog'))
       applyTheme();
 
       // 3. LA MAGIA: Le decimos a Astro que vuelva a ejecutar esto justo después de cambiar de página
-      document.addEventListener('astro:after-swap', applyTheme);
+      document.addEventListener("astro:after-swap", applyTheme);
     </script>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-  width: 960px;
-  margin: 0 auto; /* Centrado */
-}
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      main {
+        width: 960px;
+        margin: 0 auto; /* Centrado */
+      }
 
-ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas */
-  gap: 2rem;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Dos columnas */
+        gap: 2rem;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
 
-ul li:first-child {
-  grid-column: 1 / -1; /* Ocupa todo el ancho */
-  text-align: center;
-  margin-bottom: 1rem;
-}
+      ul li:first-child {
+        grid-column: 1 / -1; /* Ocupa todo el ancho */
+        text-align: center;
+        margin-bottom: 1rem;
+      }
 
-ul li:first-child img {
-  width: 100%;
-}
+      ul li:first-child img {
+        width: 100%;
+      }
 
-ul li:first-child .title {
-  font-size: 2.369rem;
-}
+      ul li:first-child .title {
+        font-size: 2.369rem;
+      }
 
-ul li img {
-  margin-bottom: 0.5rem;
-  border-radius: 12px;
-  width: 100%;
-}
+      ul li img {
+        margin-bottom: 0.5rem;
+        border-radius: 12px;
+        width: 100%;
+      }
 
-ul li a {
-  display: block;
-  text-decoration: none;
-  transition: 0.2s ease;
-}
+      ul li a {
+        display: block;
+        text-decoration: none;
+        transition: 0.2s ease;
+      }
 
-.title {
-  margin: 0;
-  color: rgb(var(--black));
-  line-height: 1;
-}
+      .title {
+        margin: 0;
+        color: rgb(var(--black));
+        line-height: 1;
+      }
 
-.date {
-  margin: 0;
-  color: rgb(var(--gray));
-}
+      .date {
+        margin: 0;
+        color: rgb(var(--gray));
+      }
 
-ul li a:hover h4,
-ul li a:hover .date {
-  color: rgb(var(--accent));
-}
+      ul li a:hover h4,
+      ul li a:hover .date {
+        color: rgb(var(--accent));
+      }
 
-ul a:hover img {
-  box-shadow: var(--box-shadow);
-}
+      ul a:hover img {
+        box-shadow: var(--box-shadow);
+      }
 
-/* Media query para tablet y móvil */
-@media (max-width: 720px) {
-  ul {
-    grid-template-columns: 1fr 1fr; /* Mantiene 2 columnas */
-    gap: 0.5em;
-  }
+      /* Media query para tablet y móvil */
+      @media (max-width: 720px) {
+        ul {
+          grid-template-columns: 1fr 1fr; /* Mantiene 2 columnas */
+          gap: 0.5em;
+        }
 
-  ul li:first-child {
-    grid-column: 1 / -1; /* Primera tarjeta ocupa todo el ancho */
-    margin-bottom: 0.5em;
-  }
+        ul li:first-child {
+          grid-column: 1 / -1; /* Primera tarjeta ocupa todo el ancho */
+          margin-bottom: 0.5em;
+        }
 
-  ul li:first-child .title {
-    font-size: 1.563em;
-  }
+        ul li:first-child .title {
+          font-size: 1.563em;
+        }
 
-  /* Opcional: ajustar imágenes y texto de los demás posts */
-  ul li img {
-    margin-bottom: 0.25em;
-  }
+        /* Opcional: ajustar imágenes y texto de los demás posts */
+        ul li img {
+          margin-bottom: 0.25em;
+        }
 
-  .title {
-    font-size: 1em;
-  }
+        .title {
+          font-size: 1em;
+        }
 
-  .date {
-    font-size: 0.9em;
-  }
-}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Blog</h1>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
+        .date {
+          font-size: 0.9em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Blog</h1>
+      <section>
+        <ul>
+          {
+            posts.map((post) => (
+              <li>
+                <a href={`/blog/${post.id}/`}>
+                  {post.data.heroImage && (
+                    <Image
+                      width={720}
+                      height={360}
+                      src={post.data.heroImage}
+                      alt=""
+                    />
+                  )}
+                  <h4 class="title">{post.data.title}</h4>
                   <p class="date">
                     <FormattedDate date={post.data.pubDate!} />
                   </p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>
