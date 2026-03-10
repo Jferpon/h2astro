@@ -1,0 +1,71 @@
+---
+// Recibimos un array de imágenes por las props
+interface Props {
+  imagenes: {
+    src: string;
+    alt: string;
+  }[];
+}
+
+const { imagenes } = Astro.props;
+---
+
+<div class="photo-grid">
+  {imagenes.map((imagen) => (
+    <div class="photo-item">
+      <img src={imagen.src} alt={imagen.alt} loading="lazy" />
+    </div>
+  ))}
+</div>
+
+<style>
+  /* Contenedor principal de la cuadrícula */
+  .photo-grid {
+    display: grid;
+    /* Por defecto en móviles: 1 sola columna */
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem; /* Espacio entre las fotos */
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  /* Contenedor individual de cada foto */
+  .photo-item {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.5rem; /* Bordes ligeramente redondeados (opcional) */
+  }
+
+  /* Estilos de la imagen */
+  .photo-item img {
+    width: 100%;
+    height: 100%;
+    /* aspect-ratio hace que todas las fotos sean cuadradas uniformes */
+    aspect-ratio: 1 / 1; 
+    /* object-fit: cover evita que se deformen al hacerse cuadradas */
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.3s ease; /* Para un pequeño efecto al pasar el ratón */
+  }
+
+  /* Efecto hover: la imagen se acerca un poquito */
+  .photo-item img:hover {
+    transform: scale(1.05);
+  }
+
+  /* --- RESPONSIVE DESIGN --- */
+  
+  /* Tablets: 2 columnas */
+  @media (min-width: 640px) {
+    .photo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Pantallas grandes (Desktop): 4 columnas como pediste (- - - -) */
+  @media (min-width: 1024px) {
+    .photo-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>
