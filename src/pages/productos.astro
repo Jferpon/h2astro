@@ -1,4 +1,7 @@
 ---
+// Importamos el Layout modificado
+import Layout from '../layouts/BlogPost.astro';
+
 const categorias = [
   {
     titulo: "Climatización y Energía",
@@ -33,13 +36,12 @@ const categorias = [
 ];
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+<Layout 
+  title="Menú de Categorías" 
+  description="Categorías de Achedosol" 
+  category="Menu" 
+  hideUI={true}
+>
 
   <header class="top-header">
     <a href="/" class="logo" aria-label="Achedosol">
@@ -109,8 +111,7 @@ const categorias = [
     document.addEventListener('astro:after-swap', setupAccordion);
   </script>
 
-</body>
-</html>
+</Layout>
 
 <style>
   :root {
@@ -121,6 +122,7 @@ const categorias = [
 
   body {
     margin: 0;
+    margin-left:-2rem;
     padding: 0;
     font-family: system-ui, -apple-system, sans-serif;
   }
@@ -178,25 +180,22 @@ const categorias = [
   .cat-title-container {
     display: flex;
     align-items: center;
-    /* Ajustamos el espacio entre icono y texto aquí */
     gap: 0.6rem; 
   }
 
   .cat-icon {
     flex-shrink: 0;
-    /* Aseguramos que el icono NO tenga transiciones de rotación */
     transform: none !important;
   }
 
   .cat-text {
-    font-size: 1.35rem; /* Categorías grandes */
+    font-size: 1.35rem;
     font-weight: 700;
     line-height: 1;
   }
 
   .chevron-static {
     opacity: 0.7;
-    /* Eliminamos cualquier rotación */
     transform: none !important;
   }
 
@@ -215,7 +214,6 @@ const categorias = [
   .cat-content ul {
     list-style: none;
     margin: 0;
-    /* Sangría para los sub-items */
     padding: 1.5rem 2rem 1.5rem 4.5rem; 
     display: flex;
     flex-direction: column;
@@ -232,7 +230,8 @@ const categorias = [
   }
 
   .cat-content a:hover {
-    opacity: 1;
+    opacity: 3;
+    font-size: 1.2rem;
   }
 
   /* --- Modo Oscuro --- */
@@ -240,3 +239,4 @@ const categorias = [
   :global(.dark) .menu-container { background-color: #1a1a1a; }
   :global(.dark) .cat-group { border-bottom-color: #333; }
   :global(.dark) .cat-content { background-color: #222; }
+</style>
