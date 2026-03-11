@@ -1,15 +1,262 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import Layout from "../layouts/BlogPost.astro";
+import Catalogo from "../components/Catalogo.astro";
+
+const fotosCatalogo = [
+    {
+    src: '/acv-logo.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/aparici.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/ariston.svg',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/armacell-logo.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/barrene.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/baxi.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/buderus.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/caminetti.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/cointra.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/dinak.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/dismol.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/domusa.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/edesa-logo.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/ferlux.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/ferroli.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/acv-logo.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/fleck.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/hergom.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/htw_logo.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/llobera.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/irsa_logo.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/junkers.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/kaltec_logo.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/lamborghini.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/lasian.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/magnum.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/mecalia.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/metlor.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/neckar.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/pelletech.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/polytherm.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/practic.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/rayco.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/rointe_logo.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/roth.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/salgueda-300x300.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/saunier-duval-300x300.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/sime-300x300.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/simex.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+
+     {
+    src: '/thermor.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/vaillant.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/vecamco.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/zehnder_logo.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+
+]
+
 ---
+
 <Layout
-    title="Termos, Calentadores y Calefacción"
-    description="Lorem ipsum dolor sit amet"
-    category="Productos"
-    >
-<p>En Tiendas Achedosol te ofrecemos los mejores productos en termos, calentadores y calefacción.</p>
-<p>Somos especialistas en la venta, asesoramiento y distribución de productos de termos, calentadores y calefacción , trabajamos con todas las marcas y fabricantes lideres del mercado.</p>
-<p>Encuentra el producto en termos, calentadores y calefacción que buscas en Ariston, Aparici, Junkers y muchas más.</p>
-<p>Solicita presupuesto sin compromiso o visita nuestras tiendas físicas en Estepona, San Pedro de Alcántara, Sotogrande, Sabinillas y Coín, te asesoramos para que elijas el producto que mejor se adapta a tus necesidades.</p>
-<p>En esta página podrás encontrar toda la información de las mejores marcas del sector. Comprar termos, calentadores y calefacción es muy fácil con nosotros. También estamos especializados en la gestión y venta de repuestos para termos, calentadores y calefacción.</p>
-<p>Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de todas las marcas con las que trabajamos.</p>
+  title="Termos, Calentadores y Calefacción"
+  description="Lorem ipsum dolor sit amet"
+  category="Productos"
+>
+  <p>
+    En Tiendas Achedosol te ofrecemos los mejores productos en termos,
+    calentadores y calefacción.
+  </p>
+  <p>
+    Somos especialistas en la venta, asesoramiento y distribución de productos
+    de termos, calentadores y calefacción , trabajamos con todas las marcas y
+    fabricantes lideres del mercado.
+  </p>
+  <p>
+    Encuentra el producto en termos, calentadores y calefacción que buscas en
+    Ariston, Aparici, Junkers y muchas más.
+  </p>
+  <p>
+    Solicita presupuesto sin compromiso o visita nuestras tiendas físicas en
+    Estepona, San Pedro de Alcántara, Sotogrande, Sabinillas y Coín, te
+    asesoramos para que elijas el producto que mejor se adapta a tus
+    necesidades.
+  </p>
+  <p>
+    En esta página podrás encontrar toda la información de las mejores marcas
+    del sector. Comprar termos, calentadores y calefacción es muy fácil con
+    nosotros. También estamos especializados en la gestión y venta de repuestos
+    para termos, calentadores y calefacción.
+  </p>
+  <p>
+    Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
+    todas las marcas con las que trabajamos.
+  </p>
+  <Catalogo fotos={fotosCatalogo} />
 </Layout>
