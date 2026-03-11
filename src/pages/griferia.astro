@@ -1,5 +1,123 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import Catalogo from "../components/Catalogo.astro";
+const fotosCatalogo = [
+  {
+    src: "/bossini-logo.webp",
+    alt: "Ariston catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/cifial.webp",
+    alt: "Aparici catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/cristina-logo.webp",
+    alt: "Cata catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/logo_clever_2025_ES.webp",
+    alt: "Ferroli catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/galindo.webp",
+    alt: "Fujitsu catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/genebre.webp",
+    alt: "Haier catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/grifaru.webp",
+    alt: "Irsa catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/grohe.webp",
+    alt: "Llobera catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/hansa.webp",
+    alt: "Iesa catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/hansgrohe.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/ideal_standard-logo.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/jacob-delafon.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/jado.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/mz.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/noken.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/oras.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/presto.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/ramonsoler.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/schell-300x300.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/teka.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/tres.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/twins-300x300.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/vola.webp",
+    alt: "Junkers catálogo de grifería",
+    href: "#", // Sustituye por el enlace al catálogo
+  },
+];
 ---
 
 <Layout
@@ -34,4 +152,5 @@ import Layout from "../layouts/BlogPost.astro";
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
     todas las marcas con las que trabajamos.
   </p>
+  <Catalogo fotos={fotosCatalogo} />
 </Layout>

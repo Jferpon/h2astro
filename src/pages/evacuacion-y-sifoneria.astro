@@ -1,5 +1,79 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import Catalogo from "../components/Catalogo.astro";
+const fotosCatalogo = [
+  {
+    src: "/crearplast.webp",
+    alt: "Ariston catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/ferroplast-logo02.webp",
+    alt: "Aparici catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/fominaya.webp",
+    alt: "Cata catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/hidrotecnoagua.webp",
+    alt: "Ferroli catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/hidroten.webp",
+    alt: "Fujitsu catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/ibide.webp",
+    alt: "Haier catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/italsan.webp",
+    alt: "Irsa catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+   {
+    src: '/jimten.webp',
+    alt: 'Llobera catálogo de evacuación y sifonería',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/molecor-logo.webp',
+    alt: 'Iesa catálogo de evacuación y sifonería',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/terrain.webp',
+    alt: 'Junkers catálogo de evacuación y sifonería',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/terrain.webp',
+    alt: 'Junkers catálogo de evacuación y sifonería',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/PRHIE_logo.webp',
+    alt: 'Junkers catálogo de evacuación y sifonería',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/riuvert.webp',
+    alt: 'Junkers catálogo de evacuación y sifonería',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/wirquin.webp',
+    alt: 'Junkers catálogo de evacuación y sifonería',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+
+  ];
 ---
 
 <Layout
@@ -34,4 +108,5 @@ import Layout from "../layouts/BlogPost.astro";
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
     todas las marcas con las que trabajamos.
   </p>
+  <Catalogo fotos={fotosCatalogo} />
 </Layout>

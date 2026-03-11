@@ -1,5 +1,223 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import Catalogo from "../components/Catalogo.astro";
+const fotosCatalogo = [
+  {
+    src: "/acquabella-logo.webp",
+    alt: "Ariston catálogo de baños y complementos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/anyway-solid-logo.webp",
+    alt: "Aparici catálogo de baños y complementos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/atron-logo.webp",
+    alt: "Cata catálogo de baños y complementos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/bathco-logo.webp",
+    alt: "Ferroli catálogo de baños y complementos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/catalano-logo.webp",
+    alt: "Fujitsu catálogo de baños y complementos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/cicsa.webp",
+    alt: "Haier catálogo de baños y complementos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/cifial.webp",
+    alt: "Irsa catálogo de baños y complementos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+   {
+    src: '/duravit.webp',
+    alt: 'Llobera catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/eizaguirre.webp',
+    alt: 'Iesa catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/estoli.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/gala.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/gme.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/grandform.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/grohe.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/hidronatur.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/ideal_standard-logo.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/jacob-delafon.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/kabin-glass.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/kaldewei_logo.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/lasser_logo.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/laufen.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/matyban.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/Mediclinics.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/nofer.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/noken.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/novellini.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/oasis-star.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/oli_logo.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/orbu.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/profiltek.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/resiblock.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/roca.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/royo.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/salgar.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/sanycces.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/schell-300x300.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/sfa-300x300.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/simex.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/tece.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/unisan.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/valadares.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/villeroy-boch.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/visobath.webp',
+    alt: 'Junkers catálogo de baños y complementos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+  ];
 ---
 
 <Layout
@@ -36,4 +254,5 @@ import Layout from "../layouts/BlogPost.astro";
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
     todas las marcas con las que trabajamos.
   </p>
+  <Catalogo fotos={fotosCatalogo} />
 </Layout>
