@@ -1,5 +1,100 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import Catalogo from "../components/Catalogo.astro";
+const fotosCatalogo = [
+  {
+    src: "/logo-abrisa.webp",
+    alt: "Ariston catálogo de riegos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/azud.webp",
+    alt: "Aparici catálogo de riegos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/cepex.webp",
+    alt: "Cata catálogo de riegos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/claber.webp",
+    alt: "Ferroli catálogo de riegos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/galcon.webp",
+    alt: "Fujitsu catálogo de riegos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/heypar.webp",
+    alt: "Haier catálogo de riegos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/hidroten.webp",
+    alt: "Irsa catálogo de riegos",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+   {
+    src: '/hunter.webp',
+    alt: 'Llobera catálogo de riegos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/irritrol.webp',
+    alt: 'Iesa catálogo de riegos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/krain.webp',
+    alt: 'Junkers catálogo de riegos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/naandanjain.webp',
+    alt: 'Junkers catálogo de riegos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/netafim.webp',
+    alt: 'Junkers catálogo de riegos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/orbit.webp',
+    alt: 'Junkers catálogo de riegos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/rainbird.webp',
+    alt: 'Junkers catálogo de riegos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/safe-rain.webp',
+    alt: 'Junkers catálogo de riegos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/toro.webp',
+    alt: 'Junkers catálogo de riegos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+
+     {
+    src: '/vyrsa_logo.webp',
+    alt: 'Junkers catálogo de riegos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/weathermatic.webp',
+    alt: 'Junkers catálogo de riegos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+
+];
 ---
 
 <Layout
@@ -32,4 +127,5 @@ import Layout from "../layouts/BlogPost.astro";
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
     todas las marcas con las que trabajamos.
   </p>
+  <Catalogo fotos={fotosCatalogo} />
 </Layout>

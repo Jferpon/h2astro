@@ -1,5 +1,55 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import Catalogo from "../components/Catalogo.astro";
+const fotosCatalogo = [
+  {
+    src: "/acquabella-logo.webp",
+    alt: "Ariston catálogo de sauna y spa",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/aquavia-logo.webp",
+    alt: "Aparici catálogo de sauna y spa",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/astralpool.webp",
+    alt: "Cata catálogo de sauna y spa",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/kinedo.webp",
+    alt: "Ferroli catálogo de sauna y spa",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/fluidra-300x300.webp",
+    alt: "Fujitsu catálogo de sauna y spa",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/helo.webp",
+    alt: "Haier catálogo de sauna y spa",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/hidronatur.webp",
+    alt: "Irsa catálogo de sauna y spa",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+   {
+    src: '/jacuzzi.webp',
+    alt: 'Iesa catálogo de sauna y spa',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/tylo.webp',
+    alt: 'Junkers catálogo de sauna y spa',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+  
+];
+
 ---
 
 <Layout
@@ -32,6 +82,7 @@ import Layout from "../layouts/BlogPost.astro";
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
     todas las marcas con las que trabajamos.
   </p>
+  <Catalogo fotos={fotosCatalogo} />
 </Layout>
 
 

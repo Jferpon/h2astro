@@ -1,5 +1,126 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import Catalogo from "../components/Catalogo.astro";
+const fotosCatalogo = [
+  {
+    src: "/aqa.webp",
+    alt: "Ariston catálogo de piscinas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/aqa-chemicals.webp",
+    alt: "Aparici catálogo de piscinas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/aquavia-logo.webp",
+    alt: "Cata catálogo de piscinas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/astralpool.webp",
+    alt: "Ferroli catálogo de piscinas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/bsv.webp",
+    alt: "Fujitsu catálogo de piscinas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/cepex.webp",
+    alt: "Haier catálogo de piscinas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/coral-logo.webp",
+    alt: "Irsa catálogo de piscinas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+   {
+    src: '/coraplax.webp',
+    alt: 'Iesa catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/ctx-logo.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/gre.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/hayward.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/heypar.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/hidroten.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/hidrowater.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/innowater.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/it3.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/kripsol.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/pentair-300x300.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/pqs.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/quimicamp-300x300.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/seko-300x300.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/speck.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/zodiac.webp',
+    alt: 'Junkers catálogo de piscinas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    
+];
+
+
 ---
 
 <Layout
@@ -23,4 +144,5 @@ import Layout from "../layouts/BlogPost.astro";
     asesoramos para que elijas la piscina que mejor se adapta a tus
     necesidades.
   </p>
+  <Catalogo fotos={fotosCatalogo} />
 </Layout>
