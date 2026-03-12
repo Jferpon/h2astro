@@ -1,5 +1,219 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import Catalogo from "../components/Catalogo.astro";
+const fotosCatalogo = [
+  {
+    src: "/ac-fix_logo.webp",
+    alt: "Ariston catálogo de fontanería, tubos y accesorios",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/aquatherm-logo.webp",
+    alt: "Aparici catálogo de fontanería, tubos y accesorios",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/atusa.webp",
+    alt: "Cata catálogo de fontanería, tubos y accesorios",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/biv.webp",
+    alt: "Ferroli catálogo de fontanería, tubos y accesorios",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/blansol-logo.webp",
+    alt: "Fujitsu catálogo de fontanería, tubos y accesorios",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/caleffi.webp",
+    alt: "Haier catálogo de fontanería, tubos y accesorios",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/emmeti-logo.webp",
+    alt: "Irsa catálogo de fontanería, tubos y accesorios",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+   {
+    src: '/ferrando-logo.webp',
+    alt: 'Llobera catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/flexitub.webp',
+    alt: 'Iesa catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/frabo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/frankische.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/geberit.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/logo-gebo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/gf.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/grupoincendios.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/hecapo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/ibp-atcosa.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/idral_logo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/imp.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/llobera.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/industrias-mateu.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/inyectometal_logo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/isiflo_logo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/italsan.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/jimten.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/metalgrupsa_logo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/logo-meval-300x300.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/mirtak.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/molecor-logo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/mt.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/terrain.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/polytherm.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/roth.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/sobime.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/sth.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/tece.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/tiemme-300x300.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/tradesa-300x300.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/tucai.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/uponor.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/unecol.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/watts.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    
+];
 ---
 
 <Layout
@@ -36,4 +250,5 @@ import Layout from "../layouts/BlogPost.astro";
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
     todas las marcas con las que trabajamos.
   </p>
+    <Catalogo fotos={fotosCatalogo} />
 </Layout>

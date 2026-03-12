@@ -1,5 +1,64 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import Catalogo from "../components/Catalogo.astro";
+const fotosCatalogo = [
+  {
+    src: "/ath-logo.webp",
+    alt: "Ariston catálogo de tratamiento de agua",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/ceasa-logo.webp",
+    alt: "Aparici catálogo de tratamiento de agua",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/cepex.webp",
+    alt: "Cata catálogo de tratamiento de agua",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/cillit.webp",
+    alt: "Ferroli catálogo de tratamiento de agua",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/dropson.webp",
+    alt: "Fujitsu catálogo de tratamiento de agua",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/hidrowater.webp",
+    alt: "Haier catálogo de tratamiento de agua",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/idegis.webp",
+    alt: "Irsa catálogo de tratamiento de agua",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/kinetico.webp",
+    alt: "Junkers catálogo de tratamiento de agua",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+   {
+    src: '/osmofilter.webp',
+    alt: 'Iesa catálogo de tratamiento de agua',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/premiertech-300x300.webp',
+    alt: 'Junkers catálogo de tratamiento de agua',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/waterfilter.webp',
+    alt: 'Junkers catálogo de tratamiento de agua',  
+    href: '#' // Sustituye por el enlace al catálogo
+    }
+];
+
 ---
 
 <Layout
@@ -36,4 +95,5 @@ import Layout from "../layouts/BlogPost.astro";
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
     todas las marcas con las que trabajamos.
   </p>
+  <Catalogo fotos={fotosCatalogo} />
 </Layout>
