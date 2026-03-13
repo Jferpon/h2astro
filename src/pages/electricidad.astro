@@ -1,5 +1,60 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import Catalogo from "../components/Catalogo.astro";
+const fotosCatalogo = [
+  {
+    src: "/aspes.webp",
+    alt: "Ariston catálogo de electricidad",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/bosch.webp",
+    alt: "Aparici catálogo de electricidad",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/cata-logo.webp",
+    alt: "Junkers catálogo de electricidad",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/fagor.webp",
+    alt: "Ferroli catálogo de electricidad",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/lg.webp",
+    alt: "Fujitsu catálogo de electricidad",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/simon_logo.webp",
+    alt: "Haier catálogo de electricidad",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/soler-palau-300x300.webp",
+    alt: "Irsa catálogo de electricidad",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+   {
+    src: '/teka.webp',
+    alt: 'Iesa catálogo de electricidad',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/vaillant.webp',
+    alt: 'Junkers catálogo de electricidad',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/vecamco.webp',
+    alt: 'Junkers catálogo de electricidad',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+  
+];
+
 ---
 
 <Layout
@@ -32,6 +87,7 @@ import Layout from "../layouts/BlogPost.astro";
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
     todas las marcas con las que trabajamos.
   </p>
+  <Catalogo fotos={fotosCatalogo} /> 
 </Layout>
 
 

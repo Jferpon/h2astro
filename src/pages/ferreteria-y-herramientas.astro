@@ -1,5 +1,178 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
+import Catalogo from "../components/Catalogo.astro";
+const fotosCatalogo = [
+  {
+    src: "/Logo-3M.webp",
+    alt: "Ariston catálogo de ferretería y herramientas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/agfri-300x298.webp",
+    alt: "Aparici catálogo de ferretería y herramientas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/alyco.webp",
+    alt: "Junkers catálogo de ferretería y herramientas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/avendi-logo.webp",
+    alt: "Ferroli catálogo de ferretería y herramientas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/blackdecker-logo.webp",
+    alt: "Fujitsu catálogo de ferretería y herramientas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/bosch.webp",
+    alt: "Haier catálogo de ferretería y herramientas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/apolo.webp",
+    alt: "Irsa catálogo de ferretería y herramientas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+   {
+    src: '/cofra.webp',
+    alt: 'Iesa catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/collak.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/deltaplus-logo.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/desa-logo.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/dewalt.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/ega-master.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/energizer.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/factory-tub-300x300.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/faren.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    
+     {
+    src: '/index-300x300.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    }, {
+    src: '/it3.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/karcher.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/kress.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/laco.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/soma.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/mt.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/ob1-300x300.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/rems.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/rombull-300x300.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/rothenberger.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/stanley.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/super-ego-300x300.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+{
+    src: '/unecol.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/velilla.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/walraven_logo.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/wigam.webp',
+    alt: 'Junkers catálogo de ferretería y herramientas',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    
+
+
+
+  
+];
 ---
 
 <Layout
@@ -32,6 +205,7 @@ import Layout from "../layouts/BlogPost.astro";
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
     todas las marcas con las que trabajamos.
   </p>
+  <Catalogo fotos={fotosCatalogo} />
 </Layout>
 
 

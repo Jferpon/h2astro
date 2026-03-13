@@ -1,9 +1,119 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
+import Catalogo from '../components/Catalogo.astro';
+const fotosCatalogo = [
+  {
+    src: '/accysa.webp',
+    alt: 'Ariston catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/arco-logo.webp',
+    alt: 'Aparici catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/atusa.webp',
+    alt: 'Junkers catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/batsur.webp',
+    alt: 'Ferroli catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/biv.webp',
+    alt: 'Fujitsu catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/caleffi.webp',
+    alt: 'Haier catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/cohisa-logo.webp',
+    alt: 'Irsa catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+   {
+    src: '/elster-iberconta.webp',
+    alt: 'Iesa catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/emmeti-logo.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/gatell.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+   {
+    src: '/genebre.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/honeywell.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/indelcasa.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/mt.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/orkli.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/potermic-300x300.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/sensus-300x300.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/sth.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/electrotaz-logo.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/tiemme-300x300.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/watts.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+
+];
+
 ---
 
 <Layout
-  title="Medición y Regulación"
+  title="Valvuleria, Medición y Regulación"
   description="Lorem ipsum dolor sit amet"
   category="Productos"
 >
@@ -32,5 +142,6 @@ import Layout from '../layouts/BlogPost.astro';
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
     todas las marcas con las que trabajamos.
   </p>
+  <Catalogo fotos={fotosCatalogo} />
 </Layout>
 

@@ -1,5 +1,152 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
+import Catalogo from '../components/Catalogo.astro';
+const fotosCatalogo = [
+  {
+    src: '/aco.webp',
+    alt: 'Ariston catálogo de obra civil y depósitos',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/arpol-logo.webp',
+    alt: 'Aparici catálogo de obra civil y depósitos',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/avk.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/belgicast.webp',
+    alt: 'Ferroli catálogo de obra civil y depósitos',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/biotanks-300x300.webp',
+    alt: 'Fujitsu catálogo de obra civil y depósitos',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/dakota-logo.webp',
+    alt: 'Haier catálogo de obra civil y depósitos',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/europlast.webp',
+    alt: 'Irsa catálogo de obra civil y depósitos',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+   {
+    src: '/fundicion-benito.webp',
+    alt: 'Iesa catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/fundicion-fabregas.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/graf.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/hauraton.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/hydrafix_logo.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/isiflo_logo.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/italsan.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/julio-garcia.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/jimten.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/masa.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/premiertech-300x300.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/molecor-logo.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/remosa.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+
+     {
+    src: '/rikutec-300x300.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    }, {
+    src: '/rodax.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/roth.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/schutz-300x300.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/solga.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/reyde.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/tuyper.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/ulma.webp',
+    alt: 'Junkers catálogo de obra civil y depósitos',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+
+
+  
+];
+
 ---
 
 <Layout
@@ -32,6 +179,7 @@ import Layout from '../layouts/BlogPost.astro';
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
     todas las marcas con las que trabajamos.
   </p>
+  <Catalogo fotos={fotosCatalogo} />
 </Layout>
 
 
