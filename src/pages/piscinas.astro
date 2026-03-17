@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
 import Catalogo from "../components/Catalogo.astro";
+import Image from "astro/components/Image.astro";
+
 const fotosCatalogo = [
   {
     src: "/aqa.webp",
@@ -135,6 +137,7 @@ const fotosCatalogo = [
     Somos especialistas en la venta, asesoramiento y distribución de piscinas,
     trabajamos con todas las marcas y fabricantes líderes del mercado.
   </p>
+  <Image src="/piscina.jpg" alt="Piscina" title="piscina" height={400} width={800}/>
   <p>
     Encuentra la piscina que buscas en Ariston, Aparici, Junkers y muchas más.
   </p>

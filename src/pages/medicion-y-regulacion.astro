@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
 import Catalogo from '../components/Catalogo.astro';
+import Image from "astro/components/Image.astro"; 
 const fotosCatalogo = [
   {
     src: '/accysa.webp',
@@ -127,6 +128,7 @@ const fotosCatalogo = [
     Encuentra el producto en medición y regulación que buscas en Ariston, Aparici, Junkers y
     muchas más.
   </p>
+  <Image src="/medicion.jpg" alt="medicion" title="medicion" width={800} height={400}/>
   <p>
     Solicita presupuesto sin compromiso o visita nuestras tiendas físicas en
     Estepona, San Pedro de Alcántara, Sotogrande, Sabinillas y Coín, te

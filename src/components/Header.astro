@@ -5,15 +5,12 @@ import Image from "astro/components/Image.astro";
 ---
 
 <header>
-  
   <nav class="nav">
-    <!-- LOGO -->
     <a href="/" class="logo" aria-label="Achedosol">
       <Image src="/logo.webp" alt="Achedosol" width={150} height={150} />
     </a>
 
-    <!-- BUSCADOR -->
-    <form class="search-bar" role="search">
+    <form class="search-bar" id="search-form" role="search" onsubmit="event.preventDefault();">
       <svg
         class="search-icon"
         xmlns="http://www.w3.org/2000/svg"
@@ -28,10 +25,11 @@ import Image from "astro/components/Image.astro";
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
       </svg>
 
-      <input type="search" placeholder="Buscar" aria-label="Buscar" />
+      <input type="search" id="search-input" placeholder="Buscar..." aria-label="Buscar" autocomplete="off" />
+      
+      <ul id="search-results" class="search-results hidden"></ul>
     </form>
 
-    <!-- ENLACES -->
     <div class="internal-links">
       <HeaderLink href="/productos">Productos</HeaderLink>
       <HeaderLink href="/miAchedosol">Mi Achedosol</HeaderLink>
@@ -47,29 +45,22 @@ import Image from "astro/components/Image.astro";
 <style>
   /* ===========================
    HEADER GENERAL
-=========================== */
+  =========================== */
   header {
     padding: 0 1rem;
-   background: var(--header-bg); 
-  
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: background 0.3s ease; /* Para que el cambio de color sea suave */
+    background: var(--header-bg); 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: background 0.3s ease;
   }
 
-  /* ===========================
-   NAV PRINCIPAL
-=========================== */
   .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* permite segunda fila */
-    row-gap: 0.5rem; /* espacio entre filas */
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
   }
 
-  /* ===========================
-   LOGO
-=========================== */
   .logo img {
     height: auto;
     max-height: 180px;
@@ -78,41 +69,97 @@ import Image from "astro/components/Image.astro";
   }
 
   /* ===========================
-   BUSCADOR
-=========================== */
+   BUSCADOR (Lupa y Input)
+  =========================== */
   .search-bar {
     position: relative;
     width: 100%;
     max-width: 500px;
-    margin-top: 0.5rem; /* espacio en la segunda fila */
-  }
-
-  .search-bar input {
-    width: 100%;
-    height: 36px;
-    padding-left: 2rem;
-    padding-right: 0.8rem;
-    border-radius: 999px;
-    border: 0.3px solid black;
-    outline: none;
-    background: white;
-    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
   }
 
   .search-icon {
     position: absolute;
-    left: 0.5rem;
+    left: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    color: #777;
+    width: 18px;
+    height: 18px;
+    color: #888;
     pointer-events: none;
+    z-index: 10;
+  }
+
+  .search-bar input {
+    width: 100%;
+    height: 42px;
+    padding: 0 1rem 0 2.8rem;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    outline: none;
+    background: white;
+    font-size: 1rem;
   }
 
   /* ===========================
+   RESULTADOS DE BÚSQUEDA
+  =========================== */
+  .search-results {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    padding: 8px 0;
+    margin: 0;
+    list-style: none; /* Quita puntos */
+    z-index: 100;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    overflow: hidden; /* Para que el hover no se salga del radio del borde */
+  }
+
+  .search-results.hidden {
+    display: none;
+  }
+
+  .search-results li {
+    padding: 0 8px;
+  }
+
+  .search-results li a {
+    display: block;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+    
+    /* ELIMINAMOS EL ESTILO POR DEFECTO */
+    color: #0066ff !important; /* Azul vibrante pero profesional */
+    text-decoration: none !important; /* FUERA SUBRAYADO */
+  }
+
+  /* EFECTO HOVER */
+  .search-results li a:hover {
+    background-color: rgba(0, 102, 255, 0.05); /* Fondo azulado muy sutil */
+    color: #0044cc !important; /* Azul un poco más oscuro */
+    transform: scale(1.03); /* Aumenta un poco el tamaño */
+    opacity: 0.85; /* Un toque de transparencia */
+    text-decoration: none !important; /* Aseguramos que no aparezca el underline */
+  }
+
+  .search-results .no-results {
+    padding: 15px;
+    color: #999;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  /* ===========================
    ENLACES INTERNOS
-=========================== */
+  =========================== */
   .internal-links {
     display: flex;
     align-items: center;
@@ -122,7 +169,7 @@ import Image from "astro/components/Image.astro";
   .internal-links a {
     padding: 0.5em 0.75em;
     color: white;
-    text-decoration: none;
+    text-decoration: none ;
     border-bottom: 4px solid transparent;
   }
 
@@ -132,73 +179,162 @@ import Image from "astro/components/Image.astro";
 
   /* ===========================
    MEDIA QUERIES
-=========================== */
-
-  /* TABLET */
+  =========================== */
   @media (max-width: 1024px) {
-    .nav {
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      row-gap: 0.5rem;
-    }
-
-    /* LOGO a la izquierda */
-    .logo {
-      margin-right: auto;
-    }
-
-    /* ENLACES a la derecha */
-    .internal-links {
-      margin-left: auto;
-    }
-
-    .logo img {
-      max-height: 120px;
-    }
-
-    /* BUSCADOR en segunda fila */
-    .search-bar {
-      flex-basis: 100%;
-      max-width: 100%;
-      order: 2;
-      margin-top: 0.5rem;
-    }
+    .nav { justify-content: space-between; align-items: center; flex-wrap: wrap; row-gap: 0.5rem; }
+    .logo { margin-right: auto; }
+    .internal-links { margin-left: auto; }
+    .logo img { max-height: 120px; }
+    .search-bar { flex-basis: 100%; max-width: 100%; order: 2; margin-top: 0.5rem; }
   }
 
-  /* MÓVIL */
   @media (max-width: 768px) {
-    .nav {
-      justify-content: center;
-      flex-wrap: wrap;
-      row-gap: 0.75rem;
-    }
-
-    /* LOGO arriba centrado */
-    .logo {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-
-    .logo img {
-      max-height: 80px;
-    }
-
-    /* NAV centrado */
-    .internal-links {
-      order: 1;
-      width: 100%;
-      justify-content: center;
-      gap: 0.75rem;
-    }
-
-    /* BUSCADOR abajo */
-    .search-bar {
-      order: 2;
-      width: 95%;
-      max-width: none;
-      margin-top: 0.5rem;
-    }
+    .nav { justify-content: center; flex-wrap: wrap; row-gap: 0.75rem; }
+    .logo { width: 100%; display: flex; justify-content: center; }
+    .logo img { max-height: 80px; }
+    .internal-links { order: 1; width: 100%; justify-content: center; gap: 0.75rem; }
+    .search-bar { order: 2; width: 95%; max-width: none; margin-top: 0.5rem; }
   }
 </style>
+
+<script>
+  interface Category {
+    name: string;
+    url: string;
+    keywords: string[];
+  }
+
+  const categories: Category[] = [
+    { 
+      name: "Aire Acondicionado", 
+      url: "/aire-acondicionado",
+      keywords: ["frio", "frío", "calor", "split", "climatizacion"]
+    },
+    { 
+      name: "Energía Solar y Alternativas", 
+      url: "/energia-solar-y-alternativas",
+      keywords: ["placas", "solares", "paneles", "fotovoltaica", "sol"]
+    },
+    { 
+      name: "Termos, Calentadores y Calefacción", 
+      url: "/termos,-calentadores-y-calefaccion",
+      keywords: ["agua caliente", "estufa", "radiador", "caldera"]
+    },
+    {
+     name: "Baños y complementos ",
+     url: "/banos-y-complementos",
+     keywords:["duchas", "sanitarios", "vater","váter", "lavabo", "plato"]
+    },
+{
+  name:"Griferia",
+  url:"/griferia",
+  keywords:["grifos", "ducha","cocina", "lavabo"]
+},
+{
+  name:"Evacuación y sifonería",
+  url:"/evacuacion-y-sifoneria",
+  keywords:["tuberías", "sifones", "desagües"],
+},
+{
+ name:"Fontanería, tubos y accesorios",
+ url:"/fontaneria,-tubos-y-accesorios",
+  keywords:["tuberías", "accesorios", "fontanería"]
+},
+{
+  name:"Bombas y grupos de presión",
+  url:"/bombas-y-grupos-de-presion",
+  keywords:["bombas", "presión", "grupos de presión"]
+},
+{
+  name:"Tratamiento de agua",
+  url:"/tratamiento-de-agua",
+  keywords:["filtros", "descalcificadores", "suavizadores", "tratamiento", "osmosis"]
+},
+{
+  name:"Piscinas",
+  url:"/piscinas",
+  keywords:["piscinas", "cloradores", "cloro", "mantenimiento", "pastillas", "tests", "ph", "acido"]
+},
+{
+  name:"Riegos",
+  url:"/riegos",
+  keywords:["riego", "aspersores", "goteo", "programadores"]
+},
+{
+  name:"Sauna y spa", 
+  url:"/sauna-y-spa",
+  keywords:["sauna", "spa", "jacuzzi", "hammam"]
+},
+{
+  name:"Electricidad",
+  url:"/electricidad",
+  keywords:["electricidad", "iluminación", "enchufes", "interruptores", "cables"]
+},
+{
+  name:"Ferreteria y herramientas",
+  url:"/ferreteria-y-herramientas",
+  keywords:["ferretería", "herramientas", "tornillos", "clavos", "tuercas", "materiales"]
+},
+{
+  name:"Obra civil y depósitos",
+  url: "/obra-civil-y-depositos",
+  keywords:["obra civil", "depósitos", "cisternas", "tanques"]
+},
+{
+  name:"Medicion y regulacion",
+  url:"/medicion-y-regulacion",
+  keywords:["medición", "regulación", "manómetros", "termómetros", "controladores"]
+}
+  ];
+
+  const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
+  const searchResults = document.getElementById('search-results') as HTMLUListElement | null;
+
+  if (searchInput && searchResults) {
+    
+    searchInput.addEventListener('input', (e: Event) => {
+      const target = e.target as HTMLInputElement;
+      if (!target) return;
+
+      const query = target.value.toLowerCase().trim();
+
+      if (query.length === 0) {
+        searchResults.innerHTML = '';
+        searchResults.classList.add('hidden');
+        return;
+      }
+
+      const filtered = categories.filter(category => {
+        const matchesName = category.name.toLowerCase().includes(query);
+        const matchesKeyword = category.keywords.some(keyword => keyword.toLowerCase().includes(query));
+        return matchesName || matchesKeyword;
+      });
+
+      if (filtered.length > 0) {
+        searchResults.innerHTML = filtered.map(item =>
+          `<li><a href="${item.url}">${item.name}</a></li>`
+        ).join(' ');
+        searchResults.classList.remove('hidden');
+      } else {
+        searchResults.innerHTML = '<li class="no-results">No se encontraron resultados</li>';
+        searchResults.classList.remove('hidden');
+      }
+    });
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', (e: MouseEvent) => {
+      const targetNode = e.target as Node;
+      if (!searchInput.contains(targetNode) && !searchResults.contains(targetNode)) {
+        searchResults.classList.add('hidden');
+      }
+    });
+
+    // Cerrar menú con la tecla Escape
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        searchResults.classList.add('hidden');
+        searchInput.blur();
+      }
+    });
+  }
+</script>

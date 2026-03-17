@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
 import Catalogo from "../components/Catalogo.astro";
+import Image from "astro/components/Image.astro";
+
 const fotosCatalogo = [
   {
     src: "/acquabella-logo.webp",
@@ -238,6 +240,7 @@ const fotosCatalogo = [
     Encuentra el producto en baños y complementos que buscas en Ariston, Aparici
     y muchas más.
   </p>
+  <Image src="/bano.jpg" alt="Baños y complementos en Achedosol" title="Baños y complementos en Achedosol" width={800} height={400} />
   <p>
     Solicita presupuesto sin compromiso o visita nuestras tiendas físicas en
     Estepona, San Pedro de Alcántara, Sotogrande, Sabinillas y Coín, te

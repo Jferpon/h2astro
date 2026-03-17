@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/BlogPost.astro";
 import Catalogo from "../components/Catalogo.astro";
+import Image from "astro/components/Image.astro";
 const fotosCatalogo = [
   {
     src: "/ariston.svg",
@@ -99,6 +100,7 @@ const fotosCatalogo = [
     Encuentra el producto en energía solar y alternativas que buscas en Ariston,
     Aparici, Junkers y muchas más.
   </p>
+  <Image src="/solar.jpg" alt="Energía solar en Achedosol" title="Energía solar en Achedosol" width={800} height={400} />
   <p>
     Solicita presupuesto sin compromiso o visita nuestras tiendas físicas en
     Estepona, San Pedro de Alcántara, Sotogrande, Sabinillas y Coín, te

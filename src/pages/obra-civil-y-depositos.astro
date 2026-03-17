@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
 import Catalogo from '../components/Catalogo.astro';
+import Image from "astro/components/Image.astro";
 const fotosCatalogo = [
   {
     src: '/aco.webp',
@@ -164,6 +165,8 @@ const fotosCatalogo = [
     Encuentra el producto en obra civil y depósitos que buscas en Ariston, Aparici, Junkers y
     muchas más.
   </p>
+  <Image src="obra.jpg" alt="obra" title="obra" width={800} height={400}/>
+  
   <p>
     Solicita presupuesto sin compromiso o visita nuestras tiendas físicas en
     Estepona, San Pedro de Alcántara, Sotogrande, Sabinillas y Coín, te

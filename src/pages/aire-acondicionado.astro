@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
 import Catalogo from '../components/Catalogo.astro';
-
+import Image from "astro/components/Image.astro";
 const fotosCatalogo = [
   {
     src: '/airwell.webp',
@@ -191,6 +191,7 @@ const fotosCatalogo = [
 
   <p>Encuentra el producto que buscas de aire acondicionado en Daikin, Haier, Ariston y muchas más.</p>
 
+  <Image src="/aire-acondicionado.jpg" alt="Aire acondicionado en Achedosol" title="Aire acondicionado en Achedosol" width={1200} height={800} />
   <p>Solicita presupuesto sin compromiso o visita nuestras tiendas físicas en Estepona, San Pedro de Alcántara, Sotogrande, Sabinillas y Coín, te asesoramos para que elijas el producto que mejor se adapta a tus necesidades.</p>
 
   <p>En esta página podrás encontrar toda la información de las mejores marcas del sector. Comprar aire acondicionado es muy fácil con nosotros. También estamos especializados en la gestión y venta de repuestos para aire acondicionado.</p>
