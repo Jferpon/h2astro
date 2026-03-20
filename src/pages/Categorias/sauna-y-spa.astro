@@ -1,106 +1,75 @@
 ---
-import Layout from "../layouts/BlogPost.astro";
-import Catalogo from "../components/Catalogo.astro";
+import Layout from "../../layouts/BlogPost.astro";
+import Catalogo from "../../components/Catalogo.astro";
 import Image from "astro/components/Image.astro";
+
 const fotosCatalogo = [
   {
-    src: "/ariston.svg",
-    alt: "Ariston catálogo de energía solar y alternativas",
+    src: "/acquabella-logo.webp",
+    alt: "Ariston catálogo de sauna y spa",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/armacell-logo.webp",
-    alt: "Aparici catálogo de energía solar y alternativas",
+    src: "/aquavia-logo.webp",
+    alt: "Aparici catálogo de sauna y spa",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/ferroli.webp",
-    alt: "ACV catálogo de energía solar y alternativas",
+    src: "/astralpool.webp",
+    alt: "Cata catálogo de sauna y spa",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/llobera.webp",
-    alt: "Baxi catálogo de energía solar y alternativas",
+    src: "/kinedo.webp",
+    alt: "Ferroli catálogo de sauna y spa",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/junkers.webp",
-    alt: "Buderus catálogo de energía solar y alternativas",
+    src: "/fluidra-300x300.webp",
+    alt: "Fujitsu catálogo de sauna y spa",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/lasian.webp",
-    alt: "Caminetti catálogo de energía solar y alternativas",
+    src: "/helo.webp",
+    alt: "Haier catálogo de sauna y spa",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/orkli.webp",
-    alt: "Cointra catálogo de energía solar y alternativas",
-    href: "#" // Sustituye por el enlace al catálogo
-  },
-  {
-    src: "/pelletech.webp",
-    alt: "Dinak catálogo de energía solar y alternativas",
-    href: "#" // Sustituye por el enlace al catálogo
-  },
-  {
-    src: "/promasol_logo.webp",
-    alt: "Dismol catálogo de energía solar y alternativas",
+    src: "/hidronatur.webp",
+    alt: "Irsa catálogo de sauna y spa",
     href: "#" // Sustituye por el enlace al catálogo
   },
    {
-    src: '/roth.webp',
-    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    src: '/jacuzzi.webp',
+    alt: 'Iesa catálogo de sauna y spa',  
     href: '#' // Sustituye por el enlace al catálogo
     },
      {
-    src: '/saunier-duval-300x300.webp',
-    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
+    src: '/tylo.webp',
+    alt: 'Junkers catálogo de sauna y spa',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/termicol.webp',
-    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/tifell-300x300.webp',
-    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/ungaro.webp',
-    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/vaillant.webp',
-    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
+  
 ];
 
 ---
 
 <Layout
-  title="Energía Solar y Alternativas"
+  title="Sauna y Spa"
   description="Lorem ipsum dolor sit amet"
   category="Productos"
 >
-  <p>
-    En Tiendas Achedosol te ofrecemos los mejores productos en energía solar y
-    alternativas.
-  </p>
+  <p>En Tiendas Achedosol te ofrecemos los mejores productos en sauna y spa.</p>
   <p>
     Somos especialistas en la venta, asesoramiento y distribución de productos
-    de energía solar y alternativas, trabajamos con todas las marcas y
-    fabricantes lideres del mercado.
+    de sauna y spa, trabajamos con todas las marcas y fabricantes lideres del
+    mercado.
   </p>
   <p>
-    Encuentra el producto en energía solar y alternativas que buscas en Ariston,
-    Aparici, Junkers y muchas más.
+    Encuentra el producto en sauna y spa que buscas en Ariston, Aparici, Junkers y
+    muchas más.
   </p>
-  <Image src="/solar.jpg" alt="Energía solar en Achedosol" title="Energía solar en Achedosol" width={800} height={400} />
+  <Image src="/spa.jpg" alt="Sauna/spa" title="Sauna/spa" height={400} width={800}/>
   <p>
     Solicita presupuesto sin compromiso o visita nuestras tiendas físicas en
     Estepona, San Pedro de Alcántara, Sotogrande, Sabinillas y Coín, te
@@ -109,20 +78,18 @@ const fotosCatalogo = [
   </p>
   <p>
     En esta página podrás encontrar toda la información de las mejores marcas
-    del sector. Comprar energía solar y alternativas es muy fácil con nosotros.
-    También estamos especializados en la gestión y venta de repuestos para
-    energía solar y alternativas.
+    del sector. Comprar sauna y spa es muy fácil con nosotros. También estamos
+    especializados en la gestión y venta de repuestos para sauna y spa.
   </p>
   <p>
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
     todas las marcas con las que trabajamos.
   </p>
-
   <h3 class="text-center">Marcas Destacadas</h3>
   
   <div class="fila-logos">
-    <Image src="/roth.webp" alt="Roth" height={300} width={200}/>  
-    <Image src="/ariston.svg" alt="Ariston" height={300} width={200}/>  
+    <Image src="/kinedo.webp" alt="Kinedo" height={300} width={200}/>  
+    <Image src="/fluidra-300x300.webp" alt="Fluidra" height={300} width={200}/>  
   </div>
 
   <h3 class="text-center">Todas nuestras marcas</h3>
@@ -206,3 +173,13 @@ const fotosCatalogo = [
     }
   }
 </style>
+
+
+
+
+
+
+
+
+
+

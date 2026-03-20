@@ -1,157 +1,128 @@
 ---
-import Layout from "../layouts/BlogPost.astro";
-import Catalogo from "../components/Catalogo.astro";
+import Layout from "../../layouts/BlogPost.astro";
+import Catalogo from "../../components/Catalogo.astro";
 import Image from "astro/components/Image.astro";
-
 const fotosCatalogo = [
   {
-    src: "/aqa.webp",
-    alt: "Ariston catálogo de piscinas",
+    src: "/ariston.svg",
+    alt: "Ariston catálogo de energía solar y alternativas",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/aqa-chemicals.webp",
-    alt: "Aparici catálogo de piscinas",
+    src: "/armacell-logo.webp",
+    alt: "Aparici catálogo de energía solar y alternativas",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/aquavia-logo.webp",
-    alt: "Cata catálogo de piscinas",
+    src: "/ferroli.webp",
+    alt: "ACV catálogo de energía solar y alternativas",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/astralpool.webp",
-    alt: "Ferroli catálogo de piscinas",
+    src: "/llobera.webp",
+    alt: "Baxi catálogo de energía solar y alternativas",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/bsv.webp",
-    alt: "Fujitsu catálogo de piscinas",
+    src: "/junkers.webp",
+    alt: "Buderus catálogo de energía solar y alternativas",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/cepex.webp",
-    alt: "Haier catálogo de piscinas",
+    src: "/lasian.webp",
+    alt: "Caminetti catálogo de energía solar y alternativas",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/coral-logo.webp",
-    alt: "Irsa catálogo de piscinas",
+    src: "/orkli.webp",
+    alt: "Cointra catálogo de energía solar y alternativas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/pelletech.webp",
+    alt: "Dinak catálogo de energía solar y alternativas",
+    href: "#" // Sustituye por el enlace al catálogo
+  },
+  {
+    src: "/promasol_logo.webp",
+    alt: "Dismol catálogo de energía solar y alternativas",
     href: "#" // Sustituye por el enlace al catálogo
   },
    {
-    src: '/coraplax.webp',
-    alt: 'Iesa catálogo de piscinas',  
+    src: '/roth.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
     href: '#' // Sustituye por el enlace al catálogo
     },
      {
-    src: '/ctx-logo.webp',
-    alt: 'Junkers catálogo de piscinas',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-    {
-    src: '/gre.webp',
-    alt: 'Junkers catálogo de piscinas',  
+    src: '/saunier-duval-300x300.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
     href: '#' // Sustituye por el enlace al catálogo
     },
      {
-    src: '/hayward.webp',
-    alt: 'Junkers catálogo de piscinas',  
+    src: '/termicol.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
     href: '#' // Sustituye por el enlace al catálogo
     },
      {
-    src: '/heypar.webp',
-    alt: 'Junkers catálogo de piscinas',  
+    src: '/tifell-300x300.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
     href: '#' // Sustituye por el enlace al catálogo
     },
      {
-    src: '/hidroten.webp',
-    alt: 'Junkers catálogo de piscinas',  
+    src: '/ungaro.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
     href: '#' // Sustituye por el enlace al catálogo
     },
      {
-    src: '/hidrowater.webp',
-    alt: 'Junkers catálogo de piscinas',  
+    src: '/vaillant.webp',
+    alt: 'Ariston catálogo de termos, calentadores y calefacción',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/innowater.webp',
-    alt: 'Junkers catálogo de piscinas',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/it3.webp',
-    alt: 'Junkers catálogo de piscinas',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/kripsol.webp',
-    alt: 'Junkers catálogo de piscinas',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/pentair-300x300.webp',
-    alt: 'Junkers catálogo de piscinas',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/pqs.webp',
-    alt: 'Junkers catálogo de piscinas',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/quimicamp-300x300.webp',
-    alt: 'Junkers catálogo de piscinas',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/seko-300x300.webp',
-    alt: 'Junkers catálogo de piscinas',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/speck.webp',
-    alt: 'Junkers catálogo de piscinas',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/zodiac.webp',
-    alt: 'Junkers catálogo de piscinas',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-    
 ];
-
 
 ---
 
 <Layout
-  title="Piscinas"
+  title="Energía Solar y Alternativas"
   description="Lorem ipsum dolor sit amet"
   category="Productos"
 >
   <p>
-    En Tiendas Achedosol te ofrecemos las mejores piscinas del mercado.
+    En Tiendas Achedosol te ofrecemos los mejores productos en energía solar y
+    alternativas.
   </p>
   <p>
-    Somos especialistas en la venta, asesoramiento y distribución de piscinas,
-    trabajamos con todas las marcas y fabricantes líderes del mercado.
+    Somos especialistas en la venta, asesoramiento y distribución de productos
+    de energía solar y alternativas, trabajamos con todas las marcas y
+    fabricantes lideres del mercado.
   </p>
-  <Image src="/piscina.jpg" alt="Piscina" title="piscina" height={400} width={800}/>
   <p>
-    Encuentra la piscina que buscas en Ariston, Aparici, Junkers y muchas más.
+    Encuentra el producto en energía solar y alternativas que buscas en Ariston,
+    Aparici, Junkers y muchas más.
   </p>
+  <Image src="/solar.jpg" alt="Energía solar en Achedosol" title="Energía solar en Achedosol" width={800} height={400} />
   <p>
     Solicita presupuesto sin compromiso o visita nuestras tiendas físicas en
     Estepona, San Pedro de Alcántara, Sotogrande, Sabinillas y Coín, te
-    asesoramos para que elijas la piscina que mejor se adapta a tus
+    asesoramos para que elijas el producto que mejor se adapta a tus
     necesidades.
   </p>
+  <p>
+    En esta página podrás encontrar toda la información de las mejores marcas
+    del sector. Comprar energía solar y alternativas es muy fácil con nosotros.
+    También estamos especializados en la gestión y venta de repuestos para
+    energía solar y alternativas.
+  </p>
+  <p>
+    Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
+    todas las marcas con las que trabajamos.
+  </p>
+
   <h3 class="text-center">Marcas Destacadas</h3>
   
   <div class="fila-logos">
-    <Image src="/astralpool.webp" alt="Ariston" height={300} width={200}/>  
-    <Image src="/zodiac.webp" alt="Aparici" height={300} width={200}/>  
+    <Image src="/roth.webp" alt="Roth" height={300} width={200}/>  
+    <Image src="/ariston.svg" alt="Ariston" height={300} width={200}/>  
   </div>
 
   <h3 class="text-center">Todas nuestras marcas</h3>

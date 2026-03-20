@@ -1,8 +1,7 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
-import Catalogo from '../components/Catalogo.astro';
-// Nota: Es mejor práctica importar Image de astro:assets en versiones modernas
-import { Image } from "astro:assets";
+import Layout from "../../layouts/BlogPost.astro";
+import Catalogo from "../../components/Catalogo.astro";
+import Image from "astro/components/Image.astro";
 
 const fotosCatalogo = [
   { src: '/airwell.webp', alt: 'Airwell catálogo', href: '#' },

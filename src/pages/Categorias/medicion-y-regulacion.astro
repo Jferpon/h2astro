@@ -1,0 +1,235 @@
+---
+import Layout from "../../layouts/BlogPost.astro";
+import Catalogo from "../../components/Catalogo.astro";
+import Image from "astro/components/Image.astro";
+const fotosCatalogo = [
+  {
+    src: '/accysa.webp',
+    alt: 'Ariston catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/arco-logo.webp',
+    alt: 'Aparici catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/atusa.webp',
+    alt: 'Junkers catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/batsur.webp',
+    alt: 'Ferroli catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/biv.webp',
+    alt: 'Fujitsu catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/caleffi.webp',
+    alt: 'Haier catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+  {
+    src: '/cohisa-logo.webp',
+    alt: 'Irsa catálogo de medición y regulación',
+    href: '#' // Sustituye por el enlace al catálogo
+  },
+   {
+    src: '/elster-iberconta.webp',
+    alt: 'Iesa catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/emmeti-logo.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/gatell.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+   {
+    src: '/genebre.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/honeywell.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/indelcasa.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+     {
+    src: '/mt.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/orkli.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/potermic-300x300.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/sensus-300x300.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/sth.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/electrotaz-logo.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/tiemme-300x300.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/watts.webp',
+    alt: 'Junkers catálogo de medición y regulación',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+
+];
+
+---
+
+<Layout
+  title="Valvuleria, Medición y Regulación"
+  description="Lorem ipsum dolor sit amet"
+  category="Productos"
+>
+  <p>En Tiendas Achedosol te ofrecemos los mejores productos en medición y regulación.</p>
+  <p>
+    Somos especialistas en la venta, asesoramiento y distribución de productos
+    de medición y regulación, trabajamos con todas las marcas y fabricantes lideres del
+    mercado.
+  </p>
+  <p>
+    Encuentra el producto en medición y regulación que buscas en Ariston, Aparici, Junkers y
+    muchas más.
+  </p>
+  <Image src="/medicion.jpg" alt="medicion" title="medicion" width={800} height={400}/>
+  <p>
+    Solicita presupuesto sin compromiso o visita nuestras tiendas físicas en
+    Estepona, San Pedro de Alcántara, Sotogrande, Sabinillas y Coín, te
+    asesoramos para que elijas el producto que mejor se adapta a tus
+    necesidades.
+  </p>
+  <p>
+    En esta página podrás encontrar toda la información de las mejores marcas
+    del sector. Comprar medición y regulación es muy fácil con nosotros. También estamos
+    especializados en la gestión y venta de repuestos para medición y regulación.
+  </p>
+  <p>
+    Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
+    todas las marcas con las que trabajamos.
+  </p>
+  <h3 class="text-center">Marcas Destacadas</h3>
+  
+  <div class="fila-logos">
+    <Image src="/watts.webp" alt="Watts" height={300} width={200}/>  
+    <Image src="/mt.webp" alt="Mt" height={300} width={200}/>  
+  </div>
+
+  <h3 class="text-center">Todas nuestras marcas</h3>
+  
+  <Catalogo fotos={fotosCatalogo} />
+
+</Layout>
+
+<style>
+  /* Estilos generales */
+  .text-center {
+    text-align: center;
+  }
+
+  /* Centrar la imagen grande */
+  .container-hero {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  .img-hero {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  /* --- LO MÁS IMPORTANTE PARA TU PREGUNTA --- */
+  
+  .fila-logos {
+    display: flex;            /* Activa Flexbox */
+    justify-content: center;  /* Centra horizontalmente las imágenes */
+    align-items: center;      /* Alinea verticalmente si tienen distinta altura */
+    
+    /* 1. Evita que bajen a otra fila si no caben */
+    flex-wrap: nowrap;        
+    
+    /* 2. Ajusta el espacio entre ellas (se encogerá en móvil) */
+    gap: 2.5rem;              
+    
+    /* Pequeño ajuste para que no toquen los bordes de la pantalla */
+    padding: 0 1rem;
+    margin: 3rem 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Estilos para las etiquetas <img> dentro del contenedor (generadas por Astro) */
+  .fila-logos img {
+    /* 3. Definimos un ancho base ideal (ej. 200px) */
+    width: 200px;
+    
+    /* 4. Pero restringimos su tamaño máximo al contenedor,
+          permitiendo que Flexbox las encoja dinámicamente */
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* Asegura que el logo se vea entero sin recortarse */
+    
+    /* Opcional: para que se encojan de forma agresiva en pantallas muy pequeñas */
+    flex-shrink: 1; 
+  }
+
+  /* Ajuste responsivo sutil para el espacio en pantallas muy pequeñas */
+  @media (max-width: 480px) {
+    .fila-logos {
+      gap: 1rem; /* Reducimos la separación en móviles muy estrechos */
+    }
+    .fila-logos img {
+        width: 150px; /* Reducimos el ancho base para pantallas diminutas */
+    }
+  }
+  /* 3. CONFIGURACIÓN PARA ESCRITORIO (Pantallas mayores a 1024px) */
+  @media (min-width: 1024px) {
+    .fila-logos {
+      /* ESPACIO EN ESCRITORIO: Aquí puedes subirlo todo lo que quieras */
+      gap: 10rem; 
+    }
+
+    .fila-logos img {
+      height: 120px; /* Un poco más grandes en PC para que luzcan */
+    }
+  }
+</style>
+

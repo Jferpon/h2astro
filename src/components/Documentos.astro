@@ -1,0 +1,73 @@
+---
+// src/components/Documentos.astro
+interface Props {
+  documentoEmpresa?: string;
+  documentoVendedor?: string;
+}
+
+const { documentoEmpresa, documentoVendedor } = Astro.props;
+---
+
+{/* Solo muestra la sección si hay al menos un documento */}
+{(documentoEmpresa || documentoVendedor) && (
+  <section class="caja-documentos">
+    <h4 class="titulo-secundario">Documentación y Catálogos</h4>
+    <div class="contenedor-enlaces">
+      {documentoEmpresa && (
+        <a href={documentoEmpresa} target="_blank" class="descarga-pdf" rel="noopener noreferrer">
+          <span class="icono-archivo">📄</span> Descargar Catálogo General
+        </a>
+      )}
+      {documentoVendedor && (
+        <a href={documentoVendedor} target="_blank" class="descarga-pdf" rel="noopener noreferrer">
+          <span class="icono-archivo">📂</span> Catálogo Específico Marca
+        </a>
+      )}
+    </div>
+  </section>
+)}
+
+<style>
+  .caja-documentos {
+    padding: 2rem;
+    background-color: #fcfcfc;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+  }
+
+  .titulo-secundario {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #222;
+    text-align: center;
+  }
+
+  .contenedor-enlaces {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .descarga-pdf {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem;
+    background-color: white;
+    color: #0056b3;
+    text-decoration: none;
+    border: 1px solid #dbeafe;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .descarga-pdf:hover {
+    background-color: #f0f7ff;
+    border-color: #bfdbfe;
+    transform: translateY(-2px);
+  }
+
+  .icono-archivo { font-size: 1.3rem; }
+</style>

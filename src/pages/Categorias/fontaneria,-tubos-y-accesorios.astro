@@ -1,246 +1,242 @@
 ---
-import Layout from "../layouts/BlogPost.astro";
-import Catalogo from "../components/Catalogo.astro";
+import Layout from "../../layouts/BlogPost.astro";
+import Catalogo from "../../components/Catalogo.astro";
 import Image from "astro/components/Image.astro";
 
 const fotosCatalogo = [
   {
-    src: "/acquabella-logo.webp",
-    alt: "Ariston catálogo de baños y complementos",
+    src: "/ac-fix_logo.webp",
+    alt: "Ariston catálogo de fontanería, tubos y accesorios",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/anyway-solid-logo.webp",
-    alt: "Aparici catálogo de baños y complementos",
+    src: "/aquatherm-logo.webp",
+    alt: "Aparici catálogo de fontanería, tubos y accesorios",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/atron-logo.webp",
-    alt: "Cata catálogo de baños y complementos",
+    src: "/atusa.webp",
+    alt: "Cata catálogo de fontanería, tubos y accesorios",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/bathco-logo.webp",
-    alt: "Ferroli catálogo de baños y complementos",
+    src: "/biv.webp",
+    alt: "Ferroli catálogo de fontanería, tubos y accesorios",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/catalano-logo.webp",
-    alt: "Fujitsu catálogo de baños y complementos",
+    src: "/blansol-logo.webp",
+    alt: "Fujitsu catálogo de fontanería, tubos y accesorios",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/cicsa.webp",
-    alt: "Haier catálogo de baños y complementos",
+    src: "/caleffi.webp",
+    alt: "Haier catálogo de fontanería, tubos y accesorios",
     href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: "/cifial.webp",
-    alt: "Irsa catálogo de baños y complementos",
+    src: "/emmeti-logo.webp",
+    alt: "Irsa catálogo de fontanería, tubos y accesorios",
     href: "#" // Sustituye por el enlace al catálogo
   },
    {
-    src: '/duravit.webp',
-    alt: 'Llobera catálogo de baños y complementos',  
+    src: '/ferrando-logo.webp',
+    alt: 'Llobera catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
      {
-    src: '/eizaguirre.webp',
-    alt: 'Iesa catálogo de baños y complementos',  
+    src: '/flexitub.webp',
+    alt: 'Iesa catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
      {
-    src: '/estoli.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    src: '/frabo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/gala.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/frankische.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/gme.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/geberit.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/grandform.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/logo-gebo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/grohe.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/gf.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/hidronatur.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/grupoincendios.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/ideal_standard-logo.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/hecapo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/jacob-delafon.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/ibp-atcosa.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/kabin-glass.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/idral_logo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/kaldewei_logo.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/imp.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/lasser_logo.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/llobera.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/laufen.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/industrias-mateu.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/matyban.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/inyectometal_logo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/Mediclinics.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/isiflo_logo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/nofer.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/italsan.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/noken.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/jimten.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/novellini.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/metalgrupsa_logo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/oasis-star.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/logo-meval-300x300.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/oli_logo.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/mirtak.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/orbu.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/molecor-logo.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/profiltek.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/mt.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/resiblock.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/terrain.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/roca.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/polytherm.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/royo.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/roth.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/salgar.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/sobime.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/sanycces.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/sth.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/schell-300x300.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/sfa-300x300.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/simex.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
+    {
     src: '/tece.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/unisan.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/tiemme-300x300.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/valadares.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/tradesa-300x300.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/villeroy-boch.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/tucai.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-     {
-    src: '/visobath.webp',
-    alt: 'Junkers catálogo de baños y complementos',  
+    {
+    src: '/uponor.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-  ];
+    {
+    src: '/unecol.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/watts.webp',
+    alt: 'Junkers catálogo de fontanería, tubos y accesorios',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    
+];
 ---
 
 <Layout
-  title="Baños y Complementos"
+  title="Fontanería, Tubos y Accesorios"
   description="Lorem ipsum dolor sit amet"
   category="Productos"
 >
   <p>
-    En Tiendas Achedosol te ofrecemos los mejores productos en baños y
-    complementos.
+    En Tiendas Achedosol te ofrecemos los mejores productos en fontanería, tubos
+    y accesorios.
   </p>
   <p>
     Somos especialistas en la venta, asesoramiento y distribución de productos
-    de baños y complementos , trabajamos con todas las marcas y fabricantes
-    lideres del mercado.
+    de fontanería, tubos y accesorios , trabajamos con todas las marcas y
+    fabricantes lideres del mercado.
   </p>
   <p>
-    Encuentra el producto en baños y complementos que buscas en Ariston, Aparici
-    y muchas más.
+    Encuentra el producto en fontanería, tubos y accesorios que buscas en
+    Ariston, Aparici, Junkers y muchas más.
   </p>
-  <Image src="/bano.jpg" alt="Baños y complementos en Achedosol" title="Baños y complementos en Achedosol" width={800} height={400} />
+  <Image src="/fontaneria.jpg" alt="Fontanería, tubos y accesorios en Achedosol" title="Fontanería, tubos y accesorios en Achedosol" width={800} height={400} />
   <p>
     Solicita presupuesto sin compromiso o visita nuestras tiendas físicas en
     Estepona, San Pedro de Alcántara, Sotogrande, Sabinillas y Coín, te
@@ -249,9 +245,9 @@ const fotosCatalogo = [
   </p>
   <p>
     En esta página podrás encontrar toda la información de las mejores marcas
-    del sector. Comprar baños y complementos es muy fácil con nosotros. También
-    estamos especializados en la gestión y venta de repuestos para baños y
-    complementos.
+    del sector. Comprar fontanería, tubos y accesorios es muy fácil con
+    nosotros. También estamos especializados en la gestión y venta de repuestos
+    para fontanería, tubos y accesorios.
   </p>
   <p>
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
@@ -260,8 +256,8 @@ const fotosCatalogo = [
    <h3 class="text-center">Marcas Destacadas</h3>
   
   <div class="fila-logos">
-    <Image src="/ideal_standard-logo.webp" alt="Ideal" height={300} width={200}/>  
-    <Image src="/grohe.webp" alt="Grohe" height={300} width={200}/>  
+    <Image src="/sth.webp" alt="Sth" height={300} width={200}/>  
+    <Image src="/uponor.webp" alt="Uponor" height={300} width={200}/>  
   </div>
 
   <h3 class="text-center">Todas nuestras marcas</h3>

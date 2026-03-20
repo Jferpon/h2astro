@@ -1,134 +1,100 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
-import Catalogo from '../components/Catalogo.astro';
-import Image from "astro/components/Image.astro"; 
+import  Layout from "../../layouts/BlogPost.astro";
+import Catalogo from "../../components/Catalogo.astro";
+import Image from "astro/components/Image.astro";
 const fotosCatalogo = [
   {
-    src: '/accysa.webp',
-    alt: 'Ariston catálogo de medición y regulación',
-    href: '#' // Sustituye por el enlace al catálogo
+    src: "/crearplast.webp",
+    alt: "Ariston catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: '/arco-logo.webp',
-    alt: 'Aparici catálogo de medición y regulación',
-    href: '#' // Sustituye por el enlace al catálogo
+    src: "/ferroplast-logo02.webp",
+    alt: "Aparici catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: '/atusa.webp',
-    alt: 'Junkers catálogo de medición y regulación',
-    href: '#' // Sustituye por el enlace al catálogo
+    src: "/fominaya.webp",
+    alt: "Cata catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: '/batsur.webp',
-    alt: 'Ferroli catálogo de medición y regulación',
-    href: '#' // Sustituye por el enlace al catálogo
+    src: "/hidrotecnoagua.webp",
+    alt: "Ferroli catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: '/biv.webp',
-    alt: 'Fujitsu catálogo de medición y regulación',
-    href: '#' // Sustituye por el enlace al catálogo
+    src: "/hidroten.webp",
+    alt: "Fujitsu catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: '/caleffi.webp',
-    alt: 'Haier catálogo de medición y regulación',
-    href: '#' // Sustituye por el enlace al catálogo
+    src: "/ibide.webp",
+    alt: "Haier catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
   },
   {
-    src: '/cohisa-logo.webp',
-    alt: 'Irsa catálogo de medición y regulación',
-    href: '#' // Sustituye por el enlace al catálogo
+    src: "/italsan.webp",
+    alt: "Irsa catálogo de evacuación y sifonería",
+    href: "#" // Sustituye por el enlace al catálogo
   },
    {
-    src: '/elster-iberconta.webp',
-    alt: 'Iesa catálogo de medición y regulación',  
+    src: '/jimten.webp',
+    alt: 'Llobera catálogo de evacuación y sifonería',  
     href: '#' // Sustituye por el enlace al catálogo
     },
      {
-    src: '/emmeti-logo.webp',
-    alt: 'Junkers catálogo de medición y regulación',  
+    src: '/molecor-logo.webp',
+    alt: 'Iesa catálogo de evacuación y sifonería',  
     href: '#' // Sustituye por el enlace al catálogo
     },
      {
-    src: '/gatell.webp',
-    alt: 'Junkers catálogo de medición y regulación',  
+    src: '/terrain.webp',
+    alt: 'Junkers catálogo de evacuación y sifonería',  
     href: '#' // Sustituye por el enlace al catálogo
     },
-   {
-    src: '/genebre.webp',
-    alt: 'Junkers catálogo de medición y regulación',  
+    {
+    src: '/terrain.webp',
+    alt: 'Junkers catálogo de evacuación y sifonería',  
+    href: '#' // Sustituye por el enlace al catálogo
+    },
+    {
+    src: '/PRHIE_logo.webp',
+    alt: 'Junkers catálogo de evacuación y sifonería',  
     href: '#' // Sustituye por el enlace al catálogo
     },
      {
-    src: '/honeywell.webp',
-    alt: 'Junkers catálogo de medición y regulación',  
+    src: '/riuvert.webp',
+    alt: 'Junkers catálogo de evacuación y sifonería',  
     href: '#' // Sustituye por el enlace al catálogo
     },
      {
-    src: '/indelcasa.webp',
-    alt: 'Junkers catálogo de medición y regulación',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-     {
-    src: '/mt.webp',
-    alt: 'Junkers catálogo de medición y regulación',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-    {
-    src: '/orkli.webp',
-    alt: 'Junkers catálogo de medición y regulación',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-    {
-    src: '/potermic-300x300.webp',
-    alt: 'Junkers catálogo de medición y regulación',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-    {
-    src: '/sensus-300x300.webp',
-    alt: 'Junkers catálogo de medición y regulación',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-    {
-    src: '/sth.webp',
-    alt: 'Junkers catálogo de medición y regulación',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-    {
-    src: '/electrotaz-logo.webp',
-    alt: 'Junkers catálogo de medición y regulación',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-    {
-    src: '/tiemme-300x300.webp',
-    alt: 'Junkers catálogo de medición y regulación',  
-    href: '#' // Sustituye por el enlace al catálogo
-    },
-    {
-    src: '/watts.webp',
-    alt: 'Junkers catálogo de medición y regulación',  
+    src: '/wirquin.webp',
+    alt: 'Junkers catálogo de evacuación y sifonería',  
     href: '#' // Sustituye por el enlace al catálogo
     },
 
-];
-
+  ];
 ---
 
 <Layout
-  title="Valvuleria, Medición y Regulación"
+  title="Evacuación y Sifonería"
+  ,
   description="Lorem ipsum dolor sit amet"
+  ,
   category="Productos"
 >
-  <p>En Tiendas Achedosol te ofrecemos los mejores productos en medición y regulación.</p>
+  <p>En Tiendas Achedosol te ofrecemos los mejores productos en evacuación y sifonería.</p>
   <p>
     Somos especialistas en la venta, asesoramiento y distribución de productos
-    de medición y regulación, trabajamos con todas las marcas y fabricantes lideres del
+    de evacuación y sifonería, trabajamos con todas las marcas y fabricantes lideres del
     mercado.
   </p>
   <p>
-    Encuentra el producto en medición y regulación que buscas en Ariston, Aparici, Junkers y
+    Encuentra el producto en evacuación y sifonería que buscas en Ariston, Aparici, Junkers y
     muchas más.
   </p>
-  <Image src="/medicion.jpg" alt="medicion" title="medicion" width={800} height={400}/>
+  <Image src="/desague.jpg" alt="Evacuación y sifonería en Achedosol" title="Evacuación y sifonería en Achedosol" width={800} height={400} />
   <p>
     Solicita presupuesto sin compromiso o visita nuestras tiendas físicas en
     Estepona, San Pedro de Alcántara, Sotogrande, Sabinillas y Coín, te
@@ -137,8 +103,8 @@ const fotosCatalogo = [
   </p>
   <p>
     En esta página podrás encontrar toda la información de las mejores marcas
-    del sector. Comprar medición y regulación es muy fácil con nosotros. También estamos
-    especializados en la gestión y venta de repuestos para medición y regulación.
+    del sector. Comprar grifería es muy fácil con nosotros. También estamos
+    especializados en la gestión y venta de repuestos para grifería.
   </p>
   <p>
     Consulta nuestros catálogos, tarifas de precios, fichas técnicas y más... de
@@ -147,8 +113,8 @@ const fotosCatalogo = [
   <h3 class="text-center">Marcas Destacadas</h3>
   
   <div class="fila-logos">
-    <Image src="/watts.webp" alt="Watts" height={300} width={200}/>  
-    <Image src="/mt.webp" alt="Mt" height={300} width={200}/>  
+    <Image src="/hidrotecnoagua.webp" alt="Tecnoagua" height={300} width={200}/>  
+    <Image src="/jimten.webp" alt="Jimten" height={300} width={200}/>  
   </div>
 
   <h3 class="text-center">Todas nuestras marcas</h3>
@@ -232,4 +198,3 @@ const fotosCatalogo = [
     }
   }
 </style>
-

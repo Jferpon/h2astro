@@ -1,0 +1,90 @@
+---
+// src/components/Vendedor.astro
+import InfoVendedor from './InfoVendedor.astro';
+import DatosVendedor from './DatosVendedor.astro';
+import Documentos from './Documentos.astro';
+
+interface Props {
+  colorFondo: string;
+  textoBiografico: string;
+  imagenesGaleria?: string[];
+  fotoPerfil: string;
+  ubicacion?: string;
+  telefono?: string;
+  correo?: string;
+  enlaceWeb?: string;
+  documentoEmpresa?: string;
+  documentoVendedor?: string;
+}
+
+const props = Astro.props;
+---
+
+<div class="maqueta-vendedor">
+  
+  {/* COLUMNA IZQUIERDA (ANCHA Y ALTA) */}
+  <div class="zona-izquierda">
+    <InfoVendedor 
+      colorFondo={props.colorFondo} 
+      textoBiografico={props.textoBiografico} 
+      imagenes={props.imagenesGaleria} 
+    />
+  </div>
+
+  {/* COLUMNA DERECHA - ARRIBA */}
+  <div class="zona-derecha-arriba">
+    <DatosVendedor 
+      fotoPerfil={props.fotoPerfil}
+      ubicacion={props.ubicacion}
+      telefono={props.telefono}
+      correo={props.correo}
+      enlaceWeb={props.enlaceWeb}
+    />
+  </div>
+
+  {/* COLUMNA DERECHA - ABAJO */}
+  <div class="zona-derecha-abajo">
+    <Documentos 
+      documentoEmpresa={props.documentoEmpresa} 
+      documentoVendedor={props.documentoVendedor} 
+    />
+  </div>
+
+</div>
+
+<style>
+  .maqueta-vendedor {
+    display: grid;
+    /* La izquierda ocupa el 65% del ancho total, la derecha el resto (1fr) */
+    grid-template-columns: 65% 1fr; 
+    /* Definimos dos filas implícitas */
+    gap: 2rem; 
+    max-width: 1400px; /* Ancho máximo contenedor */
+    margin: 2rem auto; /* Centrado en la página */
+    align-items: start; /* Evita estiramientos feos de los componentes derechos */
+  }
+
+  .zona-izquierda {
+    /* Ocupa desde la fila 1 hasta la 3 (es decir, filas 1 y 2) */
+    grid-row: 1 / 3; 
+    height: 100%; /* Importante para que el color de fondo cubra todo */
+  }
+
+  /* Si quieres que los dos componentes de la derecha tengan el mismo ancho */
+  .zona-derecha-arriba, .zona-derecha-abajo {
+    width: 100%;
+  }
+
+  /* Responsive para Tablets y Móviles */
+  @media (max-width: 1024px) {
+    .maqueta-vendedor {
+      /* En pantallas más pequeñas, volvemos a una sola columna */
+      grid-template-columns: 1fr; 
+    }
+    
+    .zona-izquierda {
+      grid-row: auto; /* Desactivamos el comportamiento de doble fila */
+      height: auto;
+    }
+  }
+</style>
