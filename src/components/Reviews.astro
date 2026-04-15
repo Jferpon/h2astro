@@ -4,14 +4,16 @@
 </div>
 
 <style>
-  /* En modo claro se ve normal */
-  .reviews-wrapper {
-    filter: none;
-    transition: filter 0.3s ease;
+  /* En lugar de invertir, aplicamos un "velo" oscuro */
+  :global(.dark) .reviews-wrapper {
+    background-color: #1c2028; /* El color de tu fondo oscuro */
+    position: relative;
+    border-radius: 8px;
   }
 
-  /* En modo oscuro invertimos los colores y ajustamos el tono */
-  :global(.dark) .reviews-wrapper {
-    filter: invert(0.9) hue-rotate(180deg) brightness(1.1);
+  /* Bajamos un poco el brillo de todo el widget para que no desentone */
+  :global(.dark) .reviews-wrapper iframe, 
+  :global(.dark) .reviews-wrapper div {
+    filter: brightness(0.8) contrast(1.1);
   }
 </style>
