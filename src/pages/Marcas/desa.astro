@@ -3,20 +3,20 @@
 import Layout from '../../layouts/BlogPost.astro'; // Ajusta la ruta según tu carpetas
 import Vendedor from '../../components/Vendedor.astro';
 
-// Datos de prueba para Zodiac
-const datosZodiac = {
+// Datos de prueba para Desa
+const datosEmpresa = {
   colorFondo: "#209CD8", 
-  textoBiografico: "Zodiac Pool Systems es reconocida mundialmente por su innovación en equipos de piscina. Con décadas de experiencia, ofrece soluciones eficientes y duraderas para el mantenimiento y disfrute del agua, destacando en limpiafondos automáticos y sistemas de cloración salina.",
+  textoBiografico: "Desa es reconocida mundialmente por su innovación en equipos de piscina. Con décadas de experiencia, ofrece soluciones eficientes y duraderas para el mantenimiento y disfrute del agua, destacando en limpiafondos automáticos y sistemas de cloración salina.",
   imagenesGaleria: [
     "/limpiafondos-zodiac.webp",
     "/dosificadores-zodiac.webp",
   ],
  
-  fotoPerfil: "/zodiac.webp", 
-  ubicacion: "Av. de los Premios Nobel, Madrid, España",
-  telefono: "+34 91 234 56 78",
-  correo: "soporte@zodiac.es",
-  enlaceWeb: "https://www.zodiac-poolcare.es/",
+  fotoPerfil: "/desa.webp", 
+  ubicacion: "C/ Basters 29, Pol. Ind. Palau de Reig 43800 Valls (Tarragona), España",
+  telefono: "902 323 130",
+  correo: "info@grupodesa.es",
+  enlaceWeb: "https://www.desa.es/",
   documentoEmpresa: "/pdfs/catalogo_general_piscinas.pdf", 
   documentoVendedor: "/pdfs/tarifa_precios_zodiac_2024.pdf"
 };
@@ -27,5 +27,5 @@ const datosZodiac = {
   description="Equipos de piscina Zodiac: limpiafondos, cloradores y bombas de calor."
   category="Productos"
 >
-  <Vendedor {...datosZodiac} />
+  <Vendedor {...datosEmpresa} />
 </Layout>
