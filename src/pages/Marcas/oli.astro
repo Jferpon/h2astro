@@ -3,20 +3,20 @@
 import Layout from '../../layouts/BlogPost.astro'; // Ajusta la ruta según tu carpetas
 import Vendedor from '../../components/Vendedor.astro';
 
-// Datos de prueba para Zodiac
-const datosZodiac = {
+// Datos de prueba para Oli
+const datosEmpresa= {
   colorFondo: "#FFFFFF", 
-  textoBiografico: "Zodiac Pool Systems es reconocida mundialmente por su innovación en equipos de piscina. Con décadas de experiencia, ofrece soluciones eficientes y duraderas para el mantenimiento y disfrute del agua, destacando en limpiafondos automáticos y sistemas de cloración salina.",
+  textoBiografico: "Oli es reconocida mundialmente por su innovación en equipos de piscina. Con décadas de experiencia, ofrece soluciones eficientes y duraderas para el mantenimiento y disfrute del agua, destacando en limpiafondos automáticos y sistemas de cloración salina.",
   imagenesGaleria: [
     "/limpiafondos-zodiac.webp",
     "/dosificadores-zodiac.webp",
   ],
  
-  fotoPerfil: "/zodiac.webp", 
-  ubicacion: "Av. de los Premios Nobel, Madrid, España",
-  telefono: "+34 91 234 56 78",
-  correo: "soporte@zodiac.es",
-  enlaceWeb: "https://www.zodiac-poolcare.es/",
+  fotoPerfil: "/oli.webp", 
+  ubicacion: "Travessa de Milão, Esgueira 3800-314 Aveiro, Portugal",
+  telefono: "+351234300200",
+  correo: "communication@oli-world.com",
+  enlaceWeb: "https://www.oli-world.com/es",
   documentoEmpresa: "/pdfs/catalogo_general_piscinas.pdf", 
   documentoVendedor: "/pdfs/tarifa_precios_zodiac_2024.pdf"
 };
@@ -27,5 +27,5 @@ const datosZodiac = {
   description="Equipos de piscina Zodiac: limpiafondos, cloradores y bombas de calor."
   category="Productos"
 >
-  <Vendedor {...datosZodiac} />
+  <Vendedor {...datosEmpresa} />
 </Layout>

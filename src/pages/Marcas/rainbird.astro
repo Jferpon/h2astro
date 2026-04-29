@@ -3,20 +3,20 @@
 import Layout from '../../layouts/BlogPost.astro'; // Ajusta la ruta según tu carpetas
 import Vendedor from '../../components/Vendedor.astro';
 
-// Datos de prueba para Zodiac
-const datosZodiac = {
+// Datos de prueba para Rain bird
+const datosEmpresa = {
   colorFondo: "#9FD1B6", 
-  textoBiografico: "Zodiac Pool Systems es reconocida mundialmente por su innovación en equipos de piscina. Con décadas de experiencia, ofrece soluciones eficientes y duraderas para el mantenimiento y disfrute del agua, destacando en limpiafondos automáticos y sistemas de cloración salina.",
+  textoBiografico: "Rain Bird es reconocida mundialmente por su innovación en sistemas de riego. Con décadas de experiencia, ofrece soluciones eficientes y duraderas para el mantenimiento y disfrute del agua, destacando en sistemas de riego automático y válvulas de control.",
   imagenesGaleria: [
     "/limpiafondos-zodiac.webp",
     "/dosificadores-zodiac.webp",
   ],
  
-  fotoPerfil: "/zodiac.webp", 
-  ubicacion: "Av. de los Premios Nobel, Madrid, España",
-  telefono: "+34 91 234 56 78",
-  correo: "soporte@zodiac.es",
-  enlaceWeb: "https://www.zodiac-poolcare.es/",
+  fotoPerfil: "/rainbird.webp", 
+  ubicacion: "Calle jose Ortega y Gasset, 22 - 24 5, Madrid, 28006 , Madrid",
+  telefono: "916 324 810",
+  correo: "jmartinez@rainbird.eu",
+  enlaceWeb: "https://www.rainbird.com/es/eur",
   documentoEmpresa: "/pdfs/catalogo_general_piscinas.pdf", 
   documentoVendedor: "/pdfs/tarifa_precios_zodiac_2024.pdf"
 };
@@ -27,5 +27,5 @@ const datosZodiac = {
   description="Equipos de piscina Zodiac: limpiafondos, cloradores y bombas de calor."
   category="Productos"
 >
-  <Vendedor {...datosZodiac} />
+  <Vendedor {...datosEmpresa} />
 </Layout>

@@ -3,20 +3,20 @@
 import Layout from '../../layouts/BlogPost.astro'; // Ajusta la ruta según tu carpetas
 import Vendedor from '../../components/Vendedor.astro';
 
-// Datos de prueba para Zodiac
-const datosZodiac = {
+// Datos de prueba para Vyrsa
+const datosEmpresa = {
   colorFondo: "#FFFFFF", 
-  textoBiografico: "Zodiac Pool Systems es reconocida mundialmente por su innovación en equipos de piscina. Con décadas de experiencia, ofrece soluciones eficientes y duraderas para el mantenimiento y disfrute del agua, destacando en limpiafondos automáticos y sistemas de cloración salina.",
+  textoBiografico: "Vyrsa es reconocida mundialmente por su innovación en equipos de piscina. Con décadas de experiencia, ofrece soluciones eficientes y duraderas para el mantenimiento y disfrute del agua, destacando en limpiafondos automáticos y sistemas de cloración salina.",
   imagenesGaleria: [
     "/limpiafondos-zodiac.webp",
     "/dosificadores-zodiac.webp",
   ],
  
-  fotoPerfil: "/zodiac.webp", 
-  ubicacion: "Av. de los Premios Nobel, Madrid, España",
-  telefono: "+34 91 234 56 78",
-  correo: "soporte@zodiac.es",
-  enlaceWeb: "https://www.zodiac-poolcare.es/",
+  fotoPerfil: "/vyrsa.webp", 
+  ubicacion: "Poligono industrial N-1 Monte de la Abadesa 09001. Burgos - España",
+  telefono: "+34 947 262 226",
+  correo: "vyrsa@vyrsa.com",
+  enlaceWeb: "https://www.vyrsa.com",
   documentoEmpresa: "/pdfs/catalogo_general_piscinas.pdf", 
   documentoVendedor: "/pdfs/tarifa_precios_zodiac_2024.pdf"
 };
@@ -27,5 +27,5 @@ const datosZodiac = {
   description="Equipos de piscina Zodiac: limpiafondos, cloradores y bombas de calor."
   category="Productos"
 >
-  <Vendedor {...datosZodiac} />
+  <Vendedor {...datosEmpresa} />
 </Layout>
